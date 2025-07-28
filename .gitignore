@@ -21,7 +21,6 @@
 *.glg
 *.glo
 *.gls
-*.out
 *.xml
 *.gz
 .idea/

@@ -5,6 +5,7 @@
 \usepackage{lmodern}
 \usepackage[english,french]{babel}
 \usepackage{xspace} % pour la gestion des espaces après les commandes
+\usepackage{xcolor}
 \usepackage{minted} % colored source code
 \usepackage{csquotes}
 
@@ -49,6 +50,14 @@
 	\markright{\MakeUppercase{#1}}
 }
 
+\definecolor{commenttext}{RGB}{139,69,19}
+\definecolor{commentnote}{RGB}{201,87,6}
+
+\newcommand{\sego}[2]{%
+    \textcolor{commenttext}{\textit{#1}}%
+    \textcolor{commentnote}{\textbf{[#2]}}%
+}
+
 \begin{document}
 	\onehalfspacing
 	\frontmatter
@@ -78,12 +87,12 @@
 
 	Le projet \gls{eida} a choisi de se concentrer sur l'étude des diagrammes astronomiques pour retracer les trajectoires d'idées relatives à l'histoire de l'astronomie dans le temps et dans l'espace.
 
-	\section[Un corpus idéal pour l'étude des transmissions]{Les sources astronomiques : un corpus idéal pour l'étude des transmissions}
+	\section[Un corpus idéal pour l'étude des transmissions]{Les sources astronomiques~: un corpus idéal pour l'étude des transmissions}
 	\input{templates/partie1/chapitre1/section1}
 
 	\section[L'iconographie témoin des diffusions intellectuelles]{L'iconographie comme témoin des diffusions intellectuelles}
 
-	Nous retrouvons au sein de ces sources scientifiques, un objet iconographique récurrent : le diagramme. L'étude de ce dernier est un excellent moyen de retracer la diffusion d'une œuvre.
+	Nous retrouvons au sein de ces sources scientifiques, un objet iconographique récurrent~: le diagramme. L'étude de ce dernier est un excellent moyen de retracer la diffusion d'une œuvre.
 	\input{templates/partie1/chapitre1/section2}
 
 	\section{Limites des approches philologiques traditionnelles}
@@ -92,20 +101,16 @@
 	\clearemptydoublepage
 
 	\chapter{AIKON et l'automatisation des traitements}
-	\section{Le choix de la vision artificielle pour ces objets d'étude : la plateforme AIKON}
-	\include{templates/section}
+	\section{Le choix de la vision artificielle pour ces objets d'étude~: la plateforme AIKON}
 
 	\section{Extraction de regions / Calcul de similarités}
-	\include{templates/section}
 
-	\section{De l'annotation manuelle au traitement de masse : les interfaces existantes}
-	\include{templates/section}
+	\section{De l'annotation manuelle au traitement de masse~: les interfaces existantes}
 
 	\clearemptydoublepage
 
 	\chapter{Vers la nécessité d'interfaces d'exploration}
 	\section{Masse de données et limites de l'exploration manuelle}
-	\include{templates/section}
 
 	\section{De la correction d'annotations à l'interprétation scientifique}
 
@@ -126,16 +131,16 @@
 	\chapter{Formalisation des besoins et contraintes de conception}
 	\section{Analyse des pratiques et questions des chercheurs EIDA}
 
-	\section{Cahier des charges : objectifs scientifiques et contraintes techniques}
+	\section{Cahier des charges~: objectifs scientifiques et contraintes techniques}
 
-	\section{Choix méthodologiques : network graph et alignement des sources (bipartite)}
+	\section{Choix méthodologiques~: network graph et alignement des sources (bipartite)}
 
 	\clearemptydoublepage
 
 	\chapter{Processus itératif de développement}
 	\section{Prototypage et tests de faisabilité technique}
 
-	\section{Mise en oeuvre concrète : choix techniques et difficultés rencontrées}
+	\section{Mise en oeuvre concrète~: choix techniques et difficultés rencontrées}
 
 	\section{Intégration des retours utilisateurs et ajustements}
 
@@ -143,9 +148,9 @@
 
 	\part{Évaluation critique et perspectives d'intégration}
 	\chapter{Analyse des visualisations produites}
-	\section{Visualisation bipartite : révéler les réorganisations du contenu intellectuel}
+	\section{Visualisation bipartite~: révéler les réorganisations du contenu intellectuel}
 
-	\section{Network graph : explorer les chaînes de transmissions}
+	\section{Network graph~: explorer les chaînes de transmissions}
 
 	\section{Adéquation aux objectifs d'exploration scientifique}
 
