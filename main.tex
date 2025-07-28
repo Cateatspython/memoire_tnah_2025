@@ -49,174 +49,139 @@
 	\markright{\MakeUppercase{#1}}
 }
 
-
-
 \begin{document}
-	
-	\onehalfspacing 
-	
+	\onehalfspacing
 	\frontmatter
-	
+
 	\input{templates/page-titre}
-	
-	\thispagestyle{empty}	
-	\cleardoublepage
-	
-	\include{templates/resume}
-	
-	\chapterNo{Remerciements}
-	\addcontentsline{toc}{chapter}{Remerciements}
-	
-	\chapterNo{Introduction}
-	\addcontentsline{toc}{chapter}{Introduction}
-	
-	La mission principale de ce stage était de concevoir des preuves de concept pour des visualisations à partir des données des projets EIDA et VHS. Ces dernières ont pour but de tester la faisabilité et la pertinence de visualisations à intégrer au sein de l’application de traitement semi-automatique de données AIKON. Avant de les développer, j’ai rédigé un cahier des charges et un benchmark des solutions techniques envisageables. Ces livrables techniques m’ont permis de définir des objectifs clairs ainsi que les limites de mon projet. Afin de bien comprendre le fonctionnement de l’application AIKON et l’expérience utilisateur qu’elle procure, j’ai rédigé une documentation pour les différentes fonctionnalités de l’interface utilisateur. Pour clore ce stage, un Digital Humanities Seminar a été organisé pour partager aux chercheurs mes recherches, les différentes étapes de réalisation des visualisations et les résultats obtenus. Plus largement, ce travail m’a amené à réaliser une réflexion approfondie autour du concept de visualisation des données en sciences humaines et sociales que je vais exposer dans ce mémoire. 
-	
-	
+
 	\thispagestyle{empty}
 	\cleardoublepage
-	
+
+	\include{templates/resume}
+
+	\chapterNo{Remerciements}
+	\addcontentsline{toc}{chapter}{Remerciements}
+
+	\chapterNo{Introduction}
+	\addcontentsline{toc}{chapter}{Introduction}
+
+	La mission principale de ce stage était de concevoir des preuves de concept pour des visualisations à partir des données des projets EIDA et VHS. Ces dernières ont pour but de tester la faisabilité et la pertinence de visualisations à intégrer au sein de l’application de traitement semi-automatique de données AIKON. Avant de les développer, j’ai rédigé un cahier des charges et un benchmark des solutions techniques envisageables. Ces livrables techniques m’ont permis de définir des objectifs clairs ainsi que les limites de mon projet. Afin de bien comprendre le fonctionnement de l’application AIKON et l’expérience utilisateur qu’elle procure, j’ai rédigé une documentation pour les différentes fonctionnalités de l’interface utilisateur. Pour clore ce stage, un Digital Humanities Seminar a été organisé pour partager aux chercheurs mes recherches, les différentes étapes de réalisation des visualisations et les résultats obtenus. Plus largement, ce travail m’a amené à réaliser une réflexion approfondie autour du concept de visualisation des données en sciences humaines et sociales que je vais exposer dans ce mémoire.
+
+	\thispagestyle{empty}
+	\cleardoublepage
+
 	\mainmatter
-	
+
 	\part{Enjeux scientifiques et techniques de l'analyse automatisée des transmissions iconographiques}
 	\chapter[Les diagrammes astronomiques]{Les diagrammes astronomiques comme objets d'étude des circulations visuelles}
-	
-	Le projet \gls{eida} a choisi de se concentrer sur l'étude des diagrammes astronomiques pour retracer les trajectoires d'idées relatives à l'histoire de l'astronomie dans le temps et dans l'espace. 
-	
+
+	Le projet \gls{eida} a choisi de se concentrer sur l'étude des diagrammes astronomiques pour retracer les trajectoires d'idées relatives à l'histoire de l'astronomie dans le temps et dans l'espace.
+
 	\section[Un corpus idéal pour l'étude des transmissions]{Les sources astronomiques : un corpus idéal pour l'étude des transmissions}
 	\input{templates/partie1/chapitre1/section1}
 
-	
-	
-	
 	\section[L'iconographie témoin des diffusions intellectuelles]{L'iconographie comme témoin des diffusions intellectuelles}
-
 
 	Nous retrouvons au sein de ces sources scientifiques, un objet iconographique récurrent : le diagramme. L'étude de ce dernier est un excellent moyen de retracer la diffusion d'une œuvre.
 	\input{templates/partie1/chapitre1/section2}
 
-
-	
 	\section{Limites des approches philologiques traditionnelles}
 	\input{templates/partie1/chapitre1/section3}
-	
-	
-	
-	
+
 	\clearemptydoublepage
-	
+
 	\chapter{AIKON et l'automatisation des traitements}
 	\section{Le choix de la vision artificielle pour ces objets d'étude : la plateforme AIKON}
 	\include{templates/section}
-	
+
 	\section{Extraction de regions / Calcul de similarités}
 	\include{templates/section}
-	
+
 	\section{De l'annotation manuelle au traitement de masse : les interfaces existantes}
 	\include{templates/section}
-	
+
 	\clearemptydoublepage
-	
+
 	\chapter{Vers la nécessité d'interfaces d'exploration}
 	\section{Masse de données et limites de l'exploration manuelle}
 	\include{templates/section}
-	
+
 	\section{De la correction d'annotations à l'interprétation scientifique}
-	\include{templates/section}
-	
+
 	\section{Questions de recherche et besoins d'exploration du corpus}
-	\include{templates/section}
-	
+
 	\clearemptydoublepage
-	
-	
+
 	\part{Méthodologie de conception des visualisations exploratoires}
 	\chapter{La visualisation en histoire}
 	\section{Evolution des représentations visuelles en histoire}
-	\include{templates/section}
-	
+
 	\section{Visualisations de réseaux et étude des disséminations}
-	\include{templates/section}
-	
+
 	\section{Enjeux critiques de la médiation numérique des données historiques}
-	\include{templates/section}
-	
+
 	\clearemptydoublepage
-	
+
 	\chapter{Formalisation des besoins et contraintes de conception}
 	\section{Analyse des pratiques et questions des chercheurs EIDA}
-	\include{templates/section}
-	
+
 	\section{Cahier des charges : objectifs scientifiques et contraintes techniques}
-	\include{templates/section}
-	
+
 	\section{Choix méthodologiques : network graph et alignement des sources (bipartite)}
-	\include{templates/section}
-	
+
 	\clearemptydoublepage
-	
+
 	\chapter{Processus itératif de développement}
 	\section{Prototypage et tests de faisabilité technique}
-	\include{templates/section}
-	
+
 	\section{Mise en oeuvre concrète : choix techniques et difficultés rencontrées}
-	\include{templates/section}
-	
+
 	\section{Intégration des retours utilisateurs et ajustements}
-	\include{templates/section}
-	
+
 	\clearemptydoublepage
-	
-	\part{Evaluation critique et perspectives d'intégration}
+
+	\part{Évaluation critique et perspectives d'intégration}
 	\chapter{Analyse des visualisations produites}
 	\section{Visualisation bipartite : révéler les réorganisations du contenu intellectuel}
-	\include{templates/section}
-	
+
 	\section{Network graph : explorer les chaînes de transmissions}
-	\include{templates/section}
-	
+
 	\section{Adéquation aux objectifs d'exploration scientifique}
-	\include{templates/section}
-	
+
 	\clearemptydoublepage
-	
+
 	\chapter{Validation et limites méthodologiques}
 	\section{Critères d'évaluation de l'efficacité exploratoire}
-	\include{templates/section}
-	
+
 	\section{Retour d'expérience par les chercheurs}
-	\include{templates/section}
-	
+
 	\section{Limites liées aux données et biais d'interprétation}
-	\include{templates/section}
-	
+
 	\clearemptydoublepage
-	
+
 	\chapter{Perspectives d'évolution et généralisation}
 	\section{Intégration dynamique à la plateforme AIKON}
-	\include{templates/section}
-	
+
 	\section{Transférabilité vers d'autres corpus et projets}
-	\include{templates/section}
-	
+
 	\section{Implications pour l'évolution des pratiques en humanités numériques}
-	\include{templates/section}
-	
+
 	\clearemptydoublepage
-	
+
 	\chapterNo{Conclusion}
 	\addcontentsline{toc}{chapter}{Conclusion}
-	
+
 	\appendix
-	\part*{Annexes}	
+	\part*{Annexes}
 	\addcontentsline{toc}{part}{Annexes}
-	
+
 	\clearemptydoublepage
-	
+
 	\backmatter
 	\printacronyms[title=Liste des acronymes,toctitle=Acronymes]
-	\printglossary 
+	\printglossary
 	\printbibliography
 	\tableofcontents
-	
+
 \end{document}

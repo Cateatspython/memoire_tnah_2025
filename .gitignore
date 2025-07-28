@@ -24,4 +24,4 @@
 *.out
 *.xml
 *.gz
-
+.idea/
