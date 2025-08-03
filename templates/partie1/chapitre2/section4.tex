@@ -1,3 +1,7 @@
+	La vision artificielle ou computer vision en anglais est \og une branche spécifique de l'intelligence artificielle traitant de l'acquisition par une machine de compétences de traitement et d'analyse d'image numériques pour en extraire des données \fg \footcite{norindrTraitementSourcesHistoriques2023}.
+	Dans le cadre de l'application AIKON, la vision artificielle n'a pas pour ambition de remplacer les historiens mais de faciliter leur travail de recherche à l'aide d'outils développés pour répondre aux besoins spécifiques des sciences historiques. 
+	La vision artificielle a déjà beaucoup été exploitée dans le domaine des sciences historiques et de la philologie pour traiter des données textuelles, notamment avec l'\gls{ocr} et l'\gls{htr}. Cependant, elle reste encore trop souvent peu exploitée pour le traitement automatique des images dans ces disciplines.
+
 \subsection{Avant AIKON : le projet EnHerit}
 
 \gls{enherit}\footcite{EnHeritEnhancingHeritage} est un projet ANR porté par l'Ecole nationale des ponts et chaussées qui s'est déroulé entre 2018 et 2023.
@@ -22,14 +26,57 @@ A partir des avancées réalisées dans le cadre de \gls{enherit}, un autre proj
 
 \subsection{L'application AIKON}
 
+\subsubsection{Présentation}
 AIKON est une application de recherche conçue pour permettre aux chercheurs en Sciences Humaines et Sociales d'exploiter des outils de computer vision afin d'analyser de vastes corpus de données historiques\footcite{aikonAikonplatformAikon2025}. 
 Sa plateforme mais aussi les modèles d'intelligence artificielle disponibles dessus sont tous \textit{open source}. Cela signifie que n'importe qui peut accéder au code et utiliser l'application de manière gratuite. Elle est donc à la fois accessible à de gros projet mais aussi à des chercheurs qui l'utiliseraient pour des projets personnels. 
 AIKON permet de décrire les sources historiques et analyser des corpus visuels en vue de leur potentielle édition\footcite{albouyAIKONComputerVision}.
 
-Au delà des outils de \textit{computer vision} qu'elle propose, AIKON est aussi un excellent outils de gestion des sources numérisées. Elle permet de déposer des témoins numérisés dans différents format (jpg, pdf ou manifest IIIF) avec la possibilité de les transformer en manifest IIIF si ce n'est pas déjà fait. Il est aussi possible de décrire des \textit{witnesses} de manière précise en fournissant des métadonnées sur la cote, le lieu de conservation ou bien l'auteur. Il est également possible de créer des fiches pour des éléments comme les \textit{works} ou \textit{authors} par exemple qui pourront être réutilisés pour différents \textit{witnesses}.   --> déplacer dans 2.3 ???
+\subsubsection{L'architecture}
 
-Avant de faire subir des traitements aux witnesses, les chercheurs peuvent les organiser en ensembles cohérents notamment en \textit{series}.
+L'architecture de l'application AIKON est la même pour tous les projets qui l'utilisent.
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/architecture_aikon.png}
+	\caption{Architecture de l'application AIKON}
+	\label{fig:architecture_aikon}
+\end{figure}
+
+L'utilisateur interagit avec l'application via une interface graphique. Il envoie une requête à l'application qui est stockée sur un serveur. Par exemple, la plateforme \gls{eida} est hébergée sur le serveur Syrte9 de l'Observatoire de Paris. AIKON est codée en python avec Django. Il s'agit d'un \textit{framework} \textit{open-source} qui permet de développer des applications web robustes facilement. Sur le serveur, il y a également la base de données PostgreSQL et les numérisations du projet. Pour réaliser un traitement automatique des données, l'extraction de regions ou la reconnaissance de similarités par exemple, l'application convertit la numérisation du document en manifeste \gls{iiif}. Un manifeste \gls{iiif} est un fichier qui décrit la structure et le contenu d'un document numérisé pour permettre son affichage et son interaction sur le web. Ce fichier est envoyé à l'\gls{api} stockée au sein d'un \gls{gpu}, un processeur spécialisé conçu pour manipuler et afficher rapidement des images. Lorsque l'\gls{api} reçoit le manifeste \gls{iiif}, elle traite le fichier avec l'algorithme choisit par l'utilisateur via l'interface graphique. Ensuite, l'\gls{api} renvoie un fichier .txt avec des annotations à l'application. Pour finir, l'utilisateur peut accéder aux résultats de l'opération sur son interface graphique pour les utiliser.
+
+\subsubsection{Le modèle de données}
+
+AIKON possède un modèle de données commun à tous les projets qui l'exploitent. Ce dernier est composé de plusieurs tables connectées entre elles.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/modele_donnees_aikon.png}
+	\caption{Modèle de données de l'application AIKON}
+	\label{fig:modele_donnees}
+\end{figure}
+
+La table centrale du modèle de données est \textit{witness}. Elle contient toutes les informations relatives à chaque document numérisé mis en ligne sur l'application. Elle est reliée aux autres tables par le biais de \textit{foreign keys}. 
+
+Dans ce modèle de données, nous retrouvons des tables reliées à des fonctions différentes : 
+\begin{itemize}
+	\item La description du \textit{witness} et de ses métadonnées : \textit{witness, conservation place, edition, place, person, role, content, language}
+	\item La numérisation du \textit{witness} : \textit{digitization}
+	\item L'organisation des \textit{witnesses} en clusters : \textit{serie, document set}
+	\item : Les traitements automatiques : \textit{treatment, regions set, regions, region pairs} 
+\end{itemize}
+
+Evidemment ces fonctions ne sont pas hermétiques car les tables sont toutes reliées entre elles.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/tables_traitement_donnees.png}
+	\caption{Tables en lien avec le traitement automatique des données}
+	\label{fig:tables_traitement}
+\end{figure}
+
+Dans le cadre de notre étude, nous allons surtout nous concentrer sur les tables relatives au traitement automatique des sources et notamment à region pairs. \\
+
+L'application AIKON est actuellement utilisée par deux projet : \gls{eida} et \gls{vhs}.
 
 \subsection{Le projet VHS}
 
