@@ -17,7 +17,7 @@ Les différents projets utilisant AIKON possèdent leur propre interface avec de
 
 Pour l'instant, ni \gls{vhs}, ni \gls{eida} ne possède d'interface publique. Les chercheurs utilisent actuellement l'interface administrateur, c'est-à-dire le \textit{back-office}. Ils possèdent chacun un compte avec un statut \og admin \fg tandis que les ingénieurs en charge du développement et de la gestion de l'application sont en mode \og super-admin \fg. L'avantage de ces interfaces est qu'il n'est pas nécessaire de savoir coder ou faire des requêtes \gls{sql}.
 
-Un \textit{User's guide}\footnote{Citer le user's guide} détaillant les différentes options a été rédigé. Nous nous concentrerons sur les principales fonctionnalités.
+Un \textit{User's guide} détaillant les différentes options a été rédigé. Nous nous concentrerons sur les principales fonctionnalités.
 
 
 
@@ -99,7 +99,7 @@ Pour commencer, il faut sélectionner les différents \textit{witnesses} à comp
 \end{figure}
 
 Une fois le traitement réalisé, nous pouvons observer les résultats en retournant sur un des \textit{witnesses}. 
-%Ajouter explications pour filtrer les résultats
+IL est possible de les filtrer grâce au formulaire en haut qui propose de choisir quels \textit{witnesses} nous voulons comparer. IL y a également un curseur pour choisir le score de similarité minimal.
 
 \subsubsection{L'annotation des résultats}
 
@@ -113,7 +113,13 @@ Même si l'objectif final serait de créer des outils d'intelligence artificiell
 	\label{fig:annotations_similarites}
 \end{figure}
 
-%Expliquer comment annoter résultats
+Pour annoter les différentes \textit{regions}, il y a un petit panneau en dessous de chacune d'entre-elles avec plusieurs cases qui représentent le type d'annotation : 
+\begin{enumerate}
+	\item \textit{Exact match} : Les deux \textit{regions} sont parfaitement similaires.
+	\item \textit{Partial match} : Les deux \textit{regions} sont un peu différentes.
+	\item \textit{Semantic match} : Les deux \textit{regions} sont différentes physiquement mais d'un point de vue théorique elles représentent un même concept ou signification.
+	\item \textit{No match} : les deux \textit{regions} ne sont pas du tout similaires.
+\end{enumerate} 
 
 
 En ce qui concerne le projet \gls{eida}, l'objectif final serait de développer une interface publique sur le même modèle que celle du projet \gls{dishas}.
