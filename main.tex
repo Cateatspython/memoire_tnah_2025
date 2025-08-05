@@ -18,6 +18,7 @@
 \usepackage{tocbibind}
 \usepackage[backend=biber, sorting=nyt, style=enc, minbibnames=10, maxbibnames=10]{biblatex}
 \addbibresource{bibliographie/biblio_astro.bib}
+\addbibresource{bibliographie/biblio_computervision.bib}
 \nocite{*}
 \defbibnote{intro}{Cette bibliographie présente toutes les ressources utilisées, de tout type, citées ou non, par simple ordre alphabétique.}
 
@@ -36,6 +37,16 @@
 \newacronym{fair}{\textsc{fair}}{\emph{Findable Accessible Interoperable Reusable}}
 \newacronym{api}{\textsc{api}}{\emph{Application Programming Interface}}
 \newacronym{eida}{EIDA}{Editing and analysing hIstorical astronomical Diagrams with Artificial intelligence}
+\newacronym{htr}{HTR}{Handwritten Text Recognition}
+\newacronym{ocr}{OCR}{Optical Character Recognition}
+\newacronym{enherit}{EnHerit}{Enhancing Heritage Image Databases}
+\newacronym{vhs}{VHS}{Computer vision and Historical analysis of Scientific illustration circulation}
+\newacronym{lte}{LTE}{Laboratoire Temps Espace}
+\newacronym{dishas}{DISHAS}{Digital Information System for the History of Astral Science}
+\newacronym{bnf}{BNF}{Bibliothèque Nationale de France}
+\newacronym{iiif}{IIIF}{International Image Interoperability Framework}
+\newacronym{gpu}{GPU}{Graphics Processing Unit}
+\newacronym{sql}{SQL}{Structured Query Language}
 
 % COMMANDS
 \newcommand{\enc}{École nationale des chartes\xspace}
@@ -88,11 +99,17 @@
 	\mainmatter
 
 	\part{Enjeux scientifiques et techniques de l'analyse automatisée des transmissions iconographiques}
+
+	
 	\chapter[Les diagrammes astronomiques]{Les diagrammes astronomiques comme objets d'étude des circulations visuelles}
 
-	Le projet \gls{eida} a choisi de se concentrer sur l'étude des diagrammes astronomiques pour retracer les trajectoires d'idées relatives à l'histoire de l'astronomie dans le temps et dans l'espace.
-
-	\section[Un corpus idéal pour l'étude des transmissions]{Les sources astronomiques~: un corpus idéal pour l'étude des transmissions}
+	L'histoire des sciences nous offre une grande diversité de représentations iconographiques : des diagrammes, des figures géométriques, des illustrations scientifiques (botanique, zoologique, anatomique, pharmacologique), des schémas, des croquis, des cartes, des plans...
+	
+	Ces images ont pour objectif d'illustrer, de schématiser, d'expliquer, de démontrer et de comprendre un concept, une théorie ou un phénomène. Elles sont les témoins de la transmissions des savoirs à travers l'espace et le temps.
+	
+	Le projet \gls{eida} a choisi de se concentrer sur l'étude des diagrammes astronomiques pour retracer les trajectoires d'idées relatives à l'histoire de l'astronomie. 
+	
+	\section[Un corpus idéal pour l'étude des transmissions]{Les sources astronomiques : un corpus idéal pour l'étude des transmissions}
 	\input{templates/partie1/chapitre1/section1}
 
 	\section[L'iconographie témoin des diffusions intellectuelles]{L'iconographie comme témoin des diffusions intellectuelles}
@@ -101,16 +118,19 @@
 
 	\section{Limites des approches philologiques traditionnelles}
 	\input{templates/partie1/chapitre1/section3}
-
 	\clearemptydoublepage
 
 	\chapter{AIKON et l'automatisation des traitements}
-	\section{Le choix de la vision artificielle pour ces objets d'étude~: la plateforme AIKON}
+	\section[La plateforme AIKON]{Le choix de la vision artificielle pour ces objets d'étude : la plateforme AIKON}
+	
+	\input{templates/partie1/chapitre2/section4} 
 
-	\section{Extraction de regions / Calcul de similarités}
-
-	\section{De l'annotation manuelle au traitement de masse~: les interfaces existantes}
-
+	\section{Les fonctionnalités de computer vision dans AIKON}
+	\input{templates/partie1/chapitre2/section5}
+	
+	\section[Les interfaces existantes]{De l'annotation manuelle au traitement de masse : les interfaces existantes}
+	\input{templates/partie1/chapitre2/section6}
+	
 	\clearemptydoublepage
 
 	\chapter{Vers la nécessité d'interfaces d'exploration}

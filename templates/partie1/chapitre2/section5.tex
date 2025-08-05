@@ -1,0 +1,22 @@
+\subsection{L'extraction des regions}
+
+Il existe plusieurs algorithmes pour extraire des \textit{regions} dans AIKON. 
+Pour l'extraction des diagrammes astronomiques du projet EIDA, nous retrouvons l'algorithme \textit{Diagram extraction (YOLO model fine-tuned on historical diagrams)}.
+Pour VHS, nous avons l'algorithme \textit{Illustration extraction (YOLO model fine-tuned on historical illustrations)}. Ce dernier a été entraîné dans le cadre du projet \gls{enherit} cité précédemment. JE NE COMPRENDS PAS
+
+\subsection{La reconnaissance et le calcul de similarité}
+
+\subsubsection{La collation des images}
+
+La collation dans le domaine de la philologie désigne l'action de comparer plusieurs témoins d'une même œuvre pour relever leurs différences et leurs similitudes. 
+
+Il existe déjà des outils pour collationner les textes automatiquement depuis longtemps. A la fin des années 1940, Charlton Hinman avait déjà créer une machine nommée le collationneur Hinman ou Hinman Collator en anglais pour collationner des impressions du \textit{Premier Folio} de William Shakespeare. Plus récemment, le logiciel CollateX permet de comparer des versions numériques du texte automatiquement\footcite{kaouaImageCollationMatching2021}. 
+
+Néanmoins, ces outils ne sont pas transposables sur les éléments iconographiques. Les méthodes d'alignement de texte avec transcription et la tokenisation utilisées sur les textes ne sont pas applicables aux images\footcite{kaouaImageCollationMatching2021}. C'est pour cette raison que les chercheurs du projet AIKON ont développé des algorithmes de reconnaissance et de calcul des similarités. 
+
+
+\subsubsection{Les algorithmes présents sur AIKON}
+
+L'algorithme utilisé pour reconnaître automatiquement les similarités et calculer leur score est SegSwap qui a notamment été entraîné sur le \textit{dataset} de Brueghel cité plus haut. Il a également été testé sur deux autres \textit{datasets} d'images représentant des images de scènes urbaines (citer les noms). Il commence par extraire des segments significatifs sur les images. Ensuite, il copie le segment d'une image A sur une image B pour créer une image modifiée synthétique contenant le segment natif et le segment de l'autre image. Le but est de reconnaître les morceaux d'image copiés entre les deux images et ignorer les zones non modifiées.  Il s'agit d'apprentissage automatique donc il n'a pas besoin d'annotation, il en génère tout seul \footcite{shenLearningCosegmentationSegment2022} vérifier. 
+
+ 
