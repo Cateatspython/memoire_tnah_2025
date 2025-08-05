@@ -1,13 +1,13 @@
 \documentclass[a4paper,12pt,twoside]{book}
 \usepackage[T1]{fontenc}
-\usepackage{inputenc}
-\usepackage{fontspec}
+\usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage[english,french]{babel}
 \usepackage{xspace} % pour la gestion des espaces après les commandes
 \usepackage{xcolor}
 \usepackage{minted} % colored source code
 \usepackage{csquotes}
+\usepackage{soul}
 
 % Mise en page École des chartes
 \usepackage[margin=2.5cm]{geometry} % marges
@@ -41,7 +41,8 @@
 \newcommand{\enc}{École nationale des chartes\xspace}
 \newcommand{\fair}{\gls{fair}\xspace}
 \newcommand{\api}{\gls{api}\xspace}
-\newcommand{\XIV}{\textsc{xiv}\ieme{}\xspace}
+\newcommand{\almageste}{\textit{Almageste}} % tu utilises parfois l'italique, parfois les guillemets
+\newcommand{\II}{\textsc{ii}\ieme{}\xspace}
 % Pour retirer le titre courant d'une page vide avant un chapitre
 \newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
 % Pour des sections non numérotées dans la table des matière
@@ -53,9 +54,13 @@
 \definecolor{commenttext}{RGB}{139,69,19}
 \definecolor{commentnote}{RGB}{201,87,6}
 
-\newcommand{\sego}[2]{%
-    \textcolor{commenttext}{\textit{#1}}%
-    \textcolor{commentnote}{\textbf{[#2]}}%
+\newcommand{\sego}[2]{
+    \textcolor{commenttext}{\textit{#1}}~
+    \textcolor{commentnote}{\textbf{[#2]}}
+}
+
+\newcommand{\sugg}[1]{
+    \textcolor{commentnote}{[\textit{#1}]}
 }
 
 \begin{document}
@@ -92,7 +97,6 @@
 
 	\section[L'iconographie témoin des diffusions intellectuelles]{L'iconographie comme témoin des diffusions intellectuelles}
 
-	Nous retrouvons au sein de ces sources scientifiques, un objet iconographique récurrent~: le diagramme. L'étude de ce dernier est un excellent moyen de retracer la diffusion d'une œuvre.
 	\input{templates/partie1/chapitre1/section2}
 
 	\section{Limites des approches philologiques traditionnelles}
