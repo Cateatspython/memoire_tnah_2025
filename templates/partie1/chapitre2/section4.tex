@@ -1,14 +1,14 @@
-	La vision artificielle ou computer vision en anglais est \og une branche spécifique de l'intelligence artificielle traitant de l'acquisition par une machine de compétences de traitement et d'analyse d'image numériques pour en extraire des données \fg \footcite{norindrTraitementSourcesHistoriques2023}.
-	Dans le cadre de l'application AIKON, la vision artificielle n'a pas pour ambition de remplacer les historiens mais de faciliter leur travail de recherche à l'aide d'outils développés pour répondre aux besoins spécifiques des sciences historiques. 
-	La vision artificielle a déjà beaucoup été exploitée dans le domaine des sciences historiques et de la philologie pour traiter des données textuelles, notamment avec l'\gls{ocr} et l'\gls{htr}. Cependant, elle reste encore trop souvent peu exploitée pour le traitement automatique des images dans ces disciplines.
+	La vision artificielle ou computer vision \som{mettre les termes anglais en italique} en anglais est \og une branche spécifique de l'intelligence artificielle traitant de l'acquisition par une machine de compétences de traitement et d'analyse d'image numériques pour en extraire des données \fg \footcite{norindrTraitementSourcesHistoriques2023}.
+	Dans le cadre de l'application AIKON \som{Abréviation + glossaire}, la vision artificielle n'a pas pour ambition de remplacer les historiens \som{Le formuler différemment, parler d'assister les chercheurs, etc ; l'approche comme ça est un peu péjorative} mais de faciliter leur travail de recherche à l'aide d'outils développés pour répondre aux besoins spécifiques des sciences historiques. 
+	La vision artificielle a déjà beaucoup été exploitée dans le domaine des sciences historiques et de la philologie pour traiter des données textuelles, notamment avec l'\gls{ocr} et l'\gls{htr}. Cependant, elle reste encore trop souvent peu exploitée pour le traitement automatique des images dans ces disciplines \som{Plus forcément vrai de nos jours, il y a beaucoup de projets qui l'utilisent maintenant.}.
 
 \subsection{Avant AIKON : le projet EnHerit}
 
 \gls{enherit}\footcite{EnHeritEnhancingHeritage} est un projet ANR porté par l'Ecole nationale des ponts et chaussées qui s'est déroulé entre 2018 et 2023.
 
-Ce projet a pour objectif d'isoler des \textit{patterns} récurrents dans plusieurs documents iconographiques pour tracer des liens entre ces derniers.
+Ce projet a pour objectif d'isoler des \textit{patterns} \som{motifs} récurrents dans plusieurs documents iconographiques pour tracer des liens entre ces derniers.
 
-Les chercheurs du projet ont choisi de travailler sur un \textit{dataset} de 1587 œuvres attribuées à Jan Brueghel et son atelier. Contrairement à ce que nous pourrions penser, les œuvres d'art produites dans ce type de contexte ne sont pas toutes uniques. Il est fréquent que des croquis préliminaires et des études soient dupliquées et réutilisés sur d'autres œuvres. Cependant, reconnaître les motifs et faire des liens entre les différentes œuvres n'est pas une tâche évidente, notamment à cause de la diversité des techniques utilisées comme la peinture à l'huile, le pastel ou le dessin par exemple. A travers ce \textit{dataset}, l'équipe du projet \gls{enherit} cherche à extraire des \textit{patterns} récurrents et à réaliser des connexions visuelles entre les différentes œuvres de l'atelier de Jan Brueghel. Les outils développés à partir de ce \textit{dataset} permettent aux historiens de l'art de réaliser une tâche qu'auparavant ils accomplissaient à la main. En effet, ces avancées ont pour but de remplacer la collation manuelle des images durant laquelle les historiens de l'art traçaient à la main chaque motif pour ensuite les comparer. Dans le cas du \textit{dataset} de l'atelier de Jan Brueghel, cela représenterait plusieurs années de travail.
+Les chercheurs du projet ont choisi de travailler sur un \textit{dataset} \som{jeu de données} de 1587 œuvres attribuées à Jan Brueghel et son atelier. Contrairement à ce que nous pourrions penser, les œuvres d'art produites dans ce type de contexte ne sont pas toutes uniques \som{Enlever la première partie de la phrase, c'est plutôt courant dans les ateliers de procéder de cette manière}. Il est fréquent que des croquis préliminaires et des études soient dupliquées et réutilisés sur d'autres œuvres \som{Outre les croquis et études, des motifs entiers sont reproduits}. Cependant, reconnaître les motifs et faire des liens entre les différentes œuvres n'est pas une tâche évidente \som{formulation familière}, notamment à cause de la diversité des techniques utilisées comme la peinture à l'huile, le pastel ou le dessin par exemple \som{idem la question n'est pas celle du médium, les historiens de l'art arrivent très bien à reconnaitre les motifs malgré les différentes techniques, ce qui peut être un problème c'est la dimension des jeux de données, d'où l'étude de l'atelier des Brueghel qui a été très prolifique}. A travers ce \textit{dataset}, l'équipe du projet \gls{enherit} cherche à extraire des \textit{patterns} récurrents et à réaliser des connexions visuelles entre les différentes œuvres de l'atelier de Jan Brueghel. Les outils développés à partir de ce \textit{dataset} permettent aux historiens de l'art de réaliser une tâche qu'auparavant ils accomplissaient à la main. En effet, ces avancées ont pour but de remplacer la collation manuelle des images durant laquelle les historiens de l'art traçaient à la main chaque motif pour ensuite les comparer \som{Pas remplacer mais accélérer, sinon ça va à l'encontre de ce que tu dis plus tôt ; et dans tous les cas un historien de l'art devra toujours vérifier la collation automatique}. Dans le cas du \textit{dataset} de l'atelier de Jan Brueghel, cela représenterait plusieurs années de travail \som{Non vérifiable}.
 
 \begin{figure}[h]
 	\centering
@@ -17,18 +17,22 @@ Les chercheurs du projet ont choisi de travailler sur un \textit{dataset} de 158
 	\label{fig:exemples_patterns_repetes}
 \end{figure}
 
-Cependant, l'un des problèmes que nous pouvons rencontrer dans ce type de projet est l'annotation manuelle qui peut se révéler fastidieux pour les historiens de l'art. C'est pour cette raison, que les chercheurs du projet \gls{enherit} ont choisi d'utiliser l'apprentissage auto-supervisé aussi appelé \textit{self-supervised learning}\footcite{shenDiscoveringVisualPatterns2019}.
-L'apprentissage auto-supervisé est \og une technique de \textit{machine learning} qui utilise l'apprentissage non-supervisé pour des tâches qui, habituellement, nécessitent un apprentissage supervisé \fg. Dans le cadre de l'apprentissage supervisé, il est nécessaire d'annoter les données au préalable tandis que dans l'apprentissage non supervisé, un algorithme les génère tout seul\footcite{QuestceQueLapprentissage2023}.
-Pour effectuer cette tâche, il est nécessaire au préalable de réaliser un apprentissage des caractéristiques. Il faut d'abord échantillonner un \textit{patch} pour trouver des candidats. Ensuite, nous filtrons les faux positifs par le biais de la cohérence spatiale avant de mettre en place un apprentissage métrique avec des paires positives et négatives. C'est de cette manière que l'outil ArtMiner a été développé\footcite{ArtMiner}. Ce dernier est réutilisé par la suite par le projet \gls{vhs}. 
-L'algorithme Segswap disponible dans l'application AIKON est également issu de ce projet.
+\som{L'oeuvre du bas n'est pas de Brueghel mais de Rossetti}
 
-A partir des avancées réalisées dans le cadre de \gls{enherit}, un autre projet est né : le projet AIKON.
+Cependant, l'un des problèmes que nous pouvons rencontrer dans ce type de projet est l'annotation manuelle qui peut se révéler fastidieuse pour les historiens de l'art \som{Phrase un peu bancale, insister plutôt sur le temps de travail que représente l'annotation}. C'est pour cette raison, que les chercheurs du projet \gls{enherit} ont choisi d'utiliser l'apprentissage auto-supervisé aussi appelé \textit{self-supervised learning}\footcite{shenDiscoveringVisualPatterns2019}.
+L'apprentissage auto-supervisé est \og une technique de \textit{machine learning} qui utilise l'apprentissage non-supervisé pour des tâches qui, habituellement, nécessitent un apprentissage supervisé \fg. Dans le cadre de l'apprentissage supervisé, il est nécessaire d'annoter les données au préalable tandis que dans l'apprentissage non supervisé, un algorithme les génère tout seul\footcite{QuestceQueLapprentissage2023}.
+Pour effectuer cette tâche, il est nécessaire au préalable de réaliser un apprentissage des caractéristiques. Il faut d'abord échantillonner un \textit{patch} pour trouver des candidats. Ensuite, nous filtrons les faux positifs par le biais de la cohérence spatiale avant de mettre en place un apprentissage métrique avec des paires positives et négatives. C'est de cette manière que l'outil ArtMiner a été développé\footcite{ArtMiner}. Ce dernier est réutilisé par la suite par le projet \gls{vhs} \som{Pas sûr. VHS utilise Segswap mais je ne pense pas qu'ArtMiner soit encore utilisé, s'il l'a été.}. 
+L'algorithme Segswap disponible dans l'application AIKON est également issu de ce projet. \som{Phrase totalement hors contexte, on ne sait pas que l'algo développé par EnHerit s'appelle SegSwap, et on ne sait pas encore ce que fait AIKON.}
+
+A partir des avancées réalisées dans le cadre de \gls{enherit}, un autre projet est né : le projet AIKON. 
+
+\som{Ce n'est pas exactement comme ça que ça s'est produit, AIKON est née des projets EIDA et VHS, qui font suite à leurs propres prédécesseurs en histoire des sciences ; EnHerit a permis de poser les bases pour des technologies et des méthodes qui sont d'intérêt pour AIKON. La partie donne l'impression que AIKON fait directement suite à EnHerit, alors que selon moi, il faudrait plutôt voir EnHerit comme un exemple de projet utilisant la vision artificielle pour traiter des sources iconographiques (je ne sais pas si la subtilité est claire).}
 
 \subsection{L'application AIKON}
 
 \subsubsection{Présentation}
-AIKON est une application de recherche conçue pour permettre aux chercheurs en Sciences Humaines et Sociales d'exploiter des outils de computer vision afin d'analyser de vastes corpus de données historiques\footcite{aikonAikonplatformAikon2025}. 
-Sa plateforme mais aussi les modèles d'intelligence artificielle disponibles dessus sont tous \textit{open source}. Cela signifie que n'importe qui peut accéder au code et utiliser l'application de manière gratuite. Elle est donc à la fois accessible à de gros projet mais aussi à des chercheurs qui l'utiliseraient pour des projets personnels. 
+AIKON est une application de recherche conçue pour permettre aux chercheurs en Sciences Humaines et Sociales \som{Sans majuscules} d'exploiter des outils de computer vision afin d'analyser de vastes corpus de données historiques\footcite{aikonAikonplatformAikon2025}. 
+Sa \som{Formulation bizarre vu qu'AIKON est la plateforme} plateforme mais aussi les modèles d'intelligence artificielle disponibles sont tous \textit{open source}. Cela signifie que n'importe qui peut accéder au code et utiliser l'application de manière gratuite. Elle est donc à la fois accessible à de gros projet mais aussi à des chercheurs qui l'utiliseraient pour des projets personnels. \som{Information pas forcément pertinente}
 AIKON permet de décrire les sources historiques et analyser des corpus visuels en vue de leur potentielle édition\footcite{albouyAIKONComputerVision}.
 
 \subsubsection{L'architecture}
@@ -42,11 +46,13 @@ L'architecture de l'application AIKON est la même pour tous les projets qui l'u
 	\label{fig:architecture_aikon}
 \end{figure}
 
-L'utilisateur interagit avec l'application via une interface graphique. Il envoie une requête à l'application qui est stockée sur un serveur. Par exemple, la plateforme \gls{eida} est hébergée sur le serveur Syrte9 de l'Observatoire de Paris. AIKON est codée en python avec Django. Il s'agit d'un \textit{framework} \textit{open-source} qui permet de développer des applications web robustes facilement. Sur le serveur, il y a également la base de données PostgreSQL et les numérisations du projet. Pour réaliser un traitement automatique des données, l'extraction de regions ou la reconnaissance de similarités par exemple, l'application convertit la numérisation du document en manifeste \gls{iiif}. Un manifeste \gls{iiif} est un fichier qui décrit la structure et le contenu d'un document numérisé pour permettre son affichage et son interaction sur le web. Ce fichier est envoyé à l'\gls{api} stockée au sein d'un \gls{gpu}, un processeur spécialisé conçu pour manipuler et afficher rapidement des images. Lorsque l'\gls{api} reçoit le manifeste \gls{iiif}, elle traite le fichier avec l'algorithme choisit par l'utilisateur via l'interface graphique. Ensuite, l'\gls{api} renvoie un fichier .txt avec des annotations à l'application. Pour finir, l'utilisateur peut accéder aux résultats de l'opération sur son interface graphique pour les utiliser.
+\som{Certains éléments d'architecture ont changé depuis mon mémoire, notamment les formats de données échangés : on utilise plus les manifestes IIIF et les fichiers txt directement, mais du JSON avec des listes de manifestes ou images, et la réponse est également en JSON. Pour l'API, les algorithmes sont directement dans l'application : le schéma donne l'impression qu'ils sont ailleurs (peut-être voir la mise en forme des flèches qui sont toutes de la même épaisseur/couleur). Par ailleurs, les légendes Serveur et GPU sont un niveau trop bas, au niveau des dockers, alors qu'elles sont liées aux rectangles extérieurs.}
+
+L'utilisateur interagit avec l'application via une interface graphique. Il envoie une requête à l'application qui est stockée sur un serveur. Par exemple, la plateforme \gls{eida} est hébergée sur le serveur Syrte9 de l'Observatoire de Paris \som{Pas la peine de rentrer dans le détail puisque ce n'est valable que pour l'instance à l'observatoire, ce n'est pas le cas de VHS ou d'AIKON aux ponts.}. AIKON est codée en python avec Django. Il s'agit d'un \textit{framework} \textit{open-source} qui permet de développer des applications web robustes facilement. Sur le serveur, il y a également la base de données PostgreSQL et les numérisations du projet. Pour réaliser un traitement automatique des données, l'extraction de regions ou la reconnaissance de similarités par exemple, l'application convertit la numérisation du document en manifeste \gls{iiif}. Un manifeste \gls{iiif} est un fichier qui décrit la structure et le contenu d'un document numérisé pour permettre son affichage et son interaction sur le web. Ce fichier est envoyé à l'\gls{api} stockée au sein d'un \gls{gpu} \som{déployée et non stockée, on stocke des données/fichiers et on déploie une applications}, un processeur spécialisé conçu pour manipuler et afficher rapidement des images \som{traiter, le GPU en lui-même ne manipule et n'affiche rien}. Lorsque l'\gls{api} reçoit le manifeste \gls{iiif}, elle traite le fichier avec l'algorithme choisit par l'utilisateur via l'interface graphique. Ensuite, l'\gls{api} renvoie un fichier .txt avec des annotations à l'application. \som{Non du coup, cf commentaire sur le schéma} Pour finir, l'utilisateur peut accéder aux résultats de l'opération sur son interface graphique pour les utiliser.
 
 \subsubsection{Le modèle de données}
 
-AIKON possède un modèle de données commun à tous les projets qui l'exploitent. Ce dernier est composé de plusieurs tables connectées entre elles.
+AIKON possède un modèle de données commun à tous les projets qui l'exploitent. Ce dernier est composé de plusieurs tables connectées entre elles. \som{Le modèle de données fait partie de la plateforme donc il est forcément commun. Il est extensible cependant.}
 
 \begin{figure}[H]
 	\centering
@@ -64,8 +70,9 @@ Dans ce modèle de données, nous retrouvons des tables reliées à des fonction
 	\item L'organisation des \textit{witnesses} en clusters : \textit{serie, document set}
 	\item : Les traitements automatiques : \textit{treatment, regions set, regions, region pairs} 
 \end{itemize}
+\som{Les series et document sets ne sont pas des clusters, cela veut dire quelque chose de particulier en vision artificielle que nous ne faisons pas pour le moment. Les regions set ne sont pas implémentés dans la plateforme. Les works et series sont des objets importants du modèle de données, il faudrait les expliquer.}
 
-Evidemment ces fonctions ne sont pas hermétiques car les tables sont toutes reliées entre elles.
+Evidemment ces fonctions ne sont pas hermétiques car les tables sont toutes reliées entre elles. \som{Familier}
 
 \begin{figure}[H]
 	\centering
@@ -74,9 +81,13 @@ Evidemment ces fonctions ne sont pas hermétiques car les tables sont toutes rel
 	\label{fig:tables_traitement}
 \end{figure}
 
+\som{Les document sets incluent aussi des works et des series, c'est l'aspect important des sets.}
+
 Dans le cadre de notre étude, nous allons surtout nous concentrer sur les tables relatives au traitement automatique des sources et notamment à region pairs. \\
 
 L'application AIKON est actuellement utilisée par deux projet : \gls{eida} et \gls{vhs}.
+
+\som{Aussi utilisée par l'école des ponts dans une instance demo, et éventuellement High Vision. Je pense que l'info peut juste être formulée en rappelant qu'AIKON est née des projets EIDA et VHS avec une volonté de travail commun entre les deux.}
 
 \subsection{Le projet VHS}
 
@@ -86,13 +97,15 @@ Le deuxième corpus concerne le \textit{De materia medica} écrit vers 77 de not
 Les deux derniers corpus contiennent des planches de \textit{l'Encyclopédie} de Diderot et d'Alembert publiées entre 1751 et 1772 mais aussi leurs sources et leur inclusion ultérieure dans d'autres encyclopédies. Les deux thèmes principaux de ces corpus sont l'histoire naturelle et les sciences mathématiques. 
 Ainsi, nous retrouvons au sein du projet \gls{vhs} à la fois deux œuvres datant de l'Antiquité et ayant été diffusés durant tout le Moyen Age et l'époque moderne dans tout l'Occident mais aussi une œuvre plus tardive qu'est \textit{l'Encyclopédie} de Diderot et d'Alembert qui a également eu une grande influence notamment dans l'écriture d'encyclopédies postérieures\footcite{Corpus}.* VHS Hypothèses (corpus)
 
+\som{L'Encyclopédie est également une oeuvre de la période moderne. Globalement, la description du projet n'est pas forcément rattachée au reste de la partie, et encore moins à la plateforme AIKON.}
+
 
 
 \subsection{Le projet EIDA}
 
-\gls{eida} est un projet ANR PRC d'envergure internationale qui a pour but l'étude et l'analyse des diagrammes de tradition ptolémaïque dans un corpus de témoins allant du IXe siècle au XIXe siècle avec des sources en latin, hébreu, sanskrit, byzantin, perse, grec, chinois et arabe. Il rassemble deux équipes de recherche. Le laboratoire \gls{lte} de l'Observatoire de Paris s'occupe principalement de la partie histoire des sciences du projet tandis que l'équipe IMAGINE de l'Ecole nationale des Ponts et Chaussées gère la partie \textit{computer vision}\footcite{albouyAIKONComputerVision}. 
+\gls{eida} est un projet ANR d'envergure internationale qui a pour but l'étude et l'analyse des diagrammes de tradition ptolémaïque dans un corpus de témoins allant du IXe siècle au XIXe siècle avec des sources en latin, hébreu, sanskrit, byzantin, perse, grec, chinois et arabe. Il rassemble deux équipes de recherche. Le laboratoire \gls{lte} de l'Observatoire de Paris s'occupe principalement de la partie histoire des sciences du projet tandis que l'équipe IMAGINE de l'Ecole nationale des Ponts et Chaussées gère la partie \textit{computer vision}\footcite{albouyAIKONComputerVision}. 
 
-Le but du projet serait de développer des outils pour que les chercheurs puissent explorer, visualiser le corpus, communiquer les résultats lors de conférences et réaliser des éditions de diagrammes nativement numériques \footcite{Conference2023EIDA2023}.
+Le but du projet est de développer des outils pour que les chercheurs puissent explorer, visualiser le corpus, communiquer les résultats lors de conférences et réaliser des éditions de diagrammes nativement numériques \footcite{Conference2023EIDA2023}.
 
 Le projet encore en cours s'est déroulé en plusieurs étapes. La première concernait la constitution du corpus. Les chercheurs cherchent à étudier le diagramme sous un angle documentaire en tant que artefact et sous son angle épistémique en tant qu'outil de compréhension pour les acteurs historiques\footcite{Conference2023EIDA2023}.
 
@@ -107,6 +120,7 @@ Sur le long terme, le but du projet serait de mettre à disposition des chercheu
 
 D'autres projets ont souhaiteraient utiliser AIKON à l'avenir pour traiter leurs sources. C'est le cas du projet ANR High Vision dont le but est d'étudier en s'aidant de la \textit{computer vision} des photographies de presse datant de la fin XIXe siècle au début du XXe siècle qui ont été numérisées en masse\footcite{HIGHVISIONProjet2025}.
 
+\som{Comme pour les autres sous-parties, faire attention à ce que tout ce qui est détaillé participe à répondre à la problématique pour ne pas donner l'impression que le mémoire faire un état de l'art d'articles et de plateformes. Essayer d'ammener les exemples donnés comme éléments d'argumentation pour un discours qui se tient de base !}
 
 
  

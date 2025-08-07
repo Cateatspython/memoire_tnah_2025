@@ -3,10 +3,12 @@
 \usepackage{inputenc}
 \usepackage{fontspec}
 \usepackage{lmodern}
+\usepackage{xcolor} % colors
 \usepackage[english,french]{babel}
 \usepackage{xspace} % pour la gestion des espaces après les commandes
-\usepackage{minted} % colored source code
+%\usepackage{minted} % colored source code
 \usepackage{csquotes}
+\usepackage{float}
 
 % Mise en page École des chartes
 \usepackage[margin=2.5cm]{geometry} % marges
@@ -60,7 +62,8 @@
 	\markright{\MakeUppercase{#1}}
 }
 
-
+% Corrections Som
+\newcommand{\som}[1]{\textcolor{teal}{SOM: #1}}
 
 \begin{document}
 	
@@ -93,6 +96,8 @@
 
 	
 	\chapter[Les diagrammes astronomiques]{Les diagrammes astronomiques comme objets d'étude des circulations visuelles}
+	
+		\som{Attention à l'effet "liste" avec trois points de suspension à la fin, essayer de contextualiser l'existence des images en parallèle du texte (outil d'étude central de l'histoire) : c'est le fait de travailler sur des images plutôt que du texte qui donne son intérêt à la méthodologie d'EIDA donc donner un cadre serait intéressant. De même, accentuer dans le second paragraphe la notion de circulation, de copie, et la spécificité de la circulation des images par rapport au texte (pas conditionnées par une langue par ex). Faire intervenir EIDA comme un exemple de cette étude visuelle : retrace en effet la trajectoire des idées, mais s'intéresse surtout à la circulation des diagrammes à travers des traditions diverses, sans limitation de langue, dans un vaste cadre chrono/géo.}
 	
 	L'histoire des sciences nous offre une grande diversité de représentations iconographiques : des diagrammes, des figures géométriques, des illustrations scientifiques (botanique, zoologique, anatomique, pharmacologique), des schémas, des croquis, des cartes, des plans...
 	
