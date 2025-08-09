@@ -18,6 +18,7 @@
 \usepackage[backend=biber, sorting=nyt, style=enc, minbibnames=10, maxbibnames=10]{biblatex}
 \addbibresource{bibliographie/biblio_astro.bib}
 \addbibresource{bibliographie/biblio_computervision.bib}
+\addbibresource{bibliographie/biblio_visualisations.bib}
 \nocite{*}
 \defbibnote{intro}{Cette bibliographie présente toutes les ressources utilisées, de tout type, citées ou non, par simple ordre alphabétique.}
 
@@ -46,6 +47,14 @@
 \newacronym{iiif}{IIIF}{International Image Interoperability Framework}
 \newacronym{gpu}{GPU}{Graphics Processing Unit}
 \newacronym{sql}{SQL}{Structured Query Language}
+\newacronym{url}{URL}{Uniform Resource Locator}
+\newacronym{json}{JSON}{JavaScript Object Notation}
+\newacronym{http}{HTTP}{Hypertext Transfer Protocol}
+\newacronym{xml}{XML}{Extensible Markup Language}
+\newacronym{bert}{BERT}{Bidirectional Encoder Representations from Transformers}
+\newacronym{eycon}{EYCON}{Early conflit photograph 1890-1918 and visual AI}
+\newacronym{aikon}{AIKON}{A computer vision platform for historians}
+\newacronym{yolo}{YOLO}{You Only Look Once}
 
 % COMMANDS
 \newcommand{\enc}{École nationale des chartes\xspace}
@@ -59,6 +68,8 @@
 	\chapter*{#1}
 	\markright{\MakeUppercase{#1}}
 }
+\newcommand{\almageste}{\textit{Almageste}\xspace}
+\newcommand{\II}{\textsc{ii}\ieme{}\xspace}
 
 
 
@@ -94,13 +105,12 @@
 	
 	\chapter[Les diagrammes astronomiques]{Les diagrammes astronomiques comme objets d'étude des circulations visuelles}
 	
-	L'histoire des sciences nous offre une grande diversité de représentations iconographiques : des diagrammes, des figures géométriques, des illustrations scientifiques (botanique, zoologique, anatomique, pharmacologique), des schémas, des croquis, des cartes, des plans...
+	L'histoire des sciences nous offre une grande diversité de représentations iconographiques : des diagrammes, des figures géométriques, des illustrations scientifiques (botanique, zoologique, anatomique, pharmacologique) des schémas, des croquis, des cartes et des plans.
 	
 	Ces images ont pour objectif d'illustrer, de schématiser, d'expliquer, de démontrer et de comprendre un concept, une théorie ou un phénomène. Elles sont les témoins de la transmissions des savoirs à travers l'espace et le temps.
 	
-	Le projet \gls{eida} a choisi de se concentrer sur l'étude des diagrammes astronomiques pour retracer les trajectoires d'idées relatives à l'histoire de l'astronomie. 
 	
-	\section[Un corpus idéal pour l'étude des transmissions]{Les sources astronomiques : un corpus idéal pour l'étude des transmissions}
+	\section[Un corpus idéal pour l'étude des transmissions]{L'Almageste : un corpus idéal pour l'étude des transmissions}
 	\input{templates/partie1/chapitre1/section1}
 
 	
@@ -139,13 +149,13 @@
 	
 	\chapter{Vers la nécessité d'interfaces d'exploration}
 	\section{Masse de données et limites de l'exploration manuelle}
-	\include{templates/section}
+	\input{templates/partie1/chapitre3/section7}
 	
-	\section{De la correction d'annotations à l'interprétation scientifique}
-	\include{templates/section}
+	\section{De l'exploitation des données à l'interprétation scientifique}
+	\input{templates/partie1/chapitre3/section8}
 	
-	\section{Questions de recherche et besoins d'exploration du corpus}
-	\include{templates/section}
+	\section[Les besoins d'exploration du corpus]{Questions de recherche et besoins d'exploration du corpus}
+	\input{templates/partie1/chapitre3/section9}
 	
 	\clearemptydoublepage
 	
