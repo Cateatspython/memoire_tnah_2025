@@ -1,0 +1,38 @@
+Le cahier des charges est un document qui définit les objectifs, les besoins, les livrables, les contraintes ainsi que les critères de validation d'un projet.  
+
+Dans cette partie, nous évoquerons les éléments les plus importants, c'est-à-dire les objectifs, les données à disposition ainsi que les fonctionnalités attendues pour les deux visualisations retenues.
+
+\subsection{Les objectifs}
+
+Dans le cadre de notre projet, nous allons réaliser deux preuves de concept de visualisations pour l'application \gls{aikon}.
+
+Pour les deux visualisations, nous nous allons nous appuyer sur les \textit{regions} de deux \textit{witnesses}.
+La première servira à comparer les \textit{region pairs} de \textit{witnesses} issus du projet \gls{vhs}. La deuxième aura pour but de visualiser les \textit{regions} similaires de données extraites du projet \textit{eida} afin de comparer les résultats de la reconnaissance automatique de similarités avant l'annotation manuelle des chercheurs. 
+
+\subsection{Les contraintes techniques}
+
+Pour mener à bien ce projet, nous nous heurtons à quelques contraintes techniques. 
+
+Tout d'abord, le temps de réalisation est limité à la durée du stage qui est de quatre mois.
+
+Ensuite, il n'est pas possible de se connecter à la base de données car il s'agit de preuves de concept qui ne seront pas intégrées telles quelles dans l'application. 
+
+Il faut aussi prendre en compte la qualité des données. Pour celles du projet \gls{vhs}, les résultats du traitement automatique ont été annotés par les chercheurs. Même s'il peut rester une part de subjectivité pour définir si deux \textit{regions} sont réellement des \textit{region pairs}, elles sont fiables. Les données issues du projet \gls{eida} sont les résultats bruts de la reconnaissance automatique des similarités. Il faut donc prêter attention à la fiabilité des \textit{region pairs}. De plus, il risque d'y avoir une quantité plus importante de données que si elles avaient été annotées au préalable par les chercheurs comme pour celles de \gls{vhs}. 
+
+Pour finir, les visualisations doivent être adaptables à tous les projets utilisant l'application \gls{aikon}.
+
+\subsection{Les données}
+
+Etant donné que nous ne pouvons pas nous connecter directement à la base de données, nous allons donc utiliser des exports \gls{csv} de la table \textit{region-pairs}.
+
+Pour la visualisation en \textit{bipartite graph}, nous utiliserons les données du projet \gls{vhs} et pour celle en \textit{force-directed layout}, celles du projet \gls{eida}.
+
+\subsection{Les fonctionnalités}
+
+\subsubsection{Bipartite graph}
+
+Dans la visualisation \textit{Bipartite graph}, les \textit{regions} de deux \textit{witnesses} sont placées côte à côte et reliées par de liens. Lorsque nous cliquons sur l'une d'entre elle, ils se colorent en rouge. Il est aussi possible d'afficher le score de similarité entre deux \textit{regions} en cochant la case \textit{Similarity score}. 
+
+\subsubsection{Force-directed layout}
+
+La visualisation \textit{Force-directed layout} représente les \textit{region pairs} sous forme de réseaux. 
