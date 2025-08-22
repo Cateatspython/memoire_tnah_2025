@@ -1,0 +1,31 @@
+\subsection{Sélection des données}
+
+Pour créer les deux visualisations, nous allons utiliser la table \textit{regions pair} du modèle de données de l'application \gls{aikon}. Elle contient les informations concernant chaque pair de \textit{regions} détectée par l'algorithme pendant le traitement automatique. Cependant, nous n'aurons pas besoin de toutes les données.
+
+Les différents attributs qui nous intéressent sont les suivants : 
+
+\begin{itemize}
+	\item \textit{id} : Il s'agit de l'identifiant unique pour chaque \textit{regions pair}.
+	\item \textit{img\_1} (string): Il s'agit d'une chaîne de caractères contenant le nom du fichier de l'image de la première \textit{region}. 
+	\item \textit{img\_2} (string) : Il s'agit d'une chaîne de caractères contenant le nom du fichier de l'image de la deuxième \textit{region}. \textit{img\_1} et \textit{img\_2} nous seront indispensables lorsque nous voudront intégrer des images dans la visualisation \textit{force-directed layout}.
+	\item \textit{score} (float) : Il s'agit du score de similarité calculé par l'algorithme lors de la reconnaissance automatique des similarités. Plus il est élevé, plus les deux \textit{regions} sont similaires. Néanmoins, nous verrons plus tard les limites de ce score.
+	\item similarity\_type (integer) : Comme nous l'avons vu précédemment, lors de l'annotation, les \textit{regions pairs} sont classés en quatre catégories : \textit{exact match, partial match, semantic match et no match}. Le \textit{similarity\_type} nous sera utile lors du nettoyage des données pour supprimer les \textit{regions pairs} qui ne sont pas pertinentes à intégrer dans une visualisation car elles sont trop différentes. 
+\end{itemize}
+
+Pour manipuler les données et les intégrer aux visualisations, il est nécessaire d'exporter cette table sous la forme de deux fichiers \gls{csv} : un premier avec les données de \gls{vhs} et un second avec celles de \gls{eida}. Pour le cas de \gls{vhs}, il faut également exporter les images des \textit{regions} présentes dans la table \textit{regions pair}.
+
+Pour la visualisation \textit{bipartite graph}, nous travaillerons sur les \textit{witnesses 75, 76 et 116} du projet \gls{vhs}. La visualisation \textit{force-directed layout} portera sur les \textit{witnesses 1 et 40} de la base de données \gls{eida}.
+
+
+
+\subsection{Nettoyage des données}
+
+
+
+\subsubsection{Les données pour la visualisation \textit{bipartite graph}}
+
+
+
+
+\subsubsection{Les données pour la visualisation \textit{force-directed layout}}
+
