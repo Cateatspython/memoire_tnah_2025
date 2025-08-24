@@ -15,17 +15,36 @@ Les différents attributs qui nous intéressent sont les suivants :
 Pour manipuler les données et les intégrer aux visualisations, il est nécessaire d'exporter cette table sous la forme de deux fichiers \gls{csv} : un premier avec les données de \gls{vhs} et un second avec celles de \gls{eida}. Pour le cas de \gls{vhs}, il faut également exporter les images des \textit{regions} présentes dans la table \textit{regions pair}.
 
 Pour la visualisation \textit{bipartite graph}, nous travaillerons sur les \textit{witnesses 75, 76 et 116} du projet \gls{vhs}. La visualisation \textit{force-directed layout} portera sur les \textit{witnesses 1 et 40} de la base de données \gls{eida}.
+% Expliquer le contenu de ces exports
 
 
 
 \subsection{Nettoyage des données}
 
+Pour nettoyer les données à l'aide de Python, nous allons utiliser plusieurs outils : 
+
+\begin{itemize}
+	\item Les \textit{Jupyter Notebooks}\footcite{ProjectJupyter} permettent d'écrire et d'exécuter du code Python bloc par bloc pour voir les étapes et expérimenter différentes solutions. Ils sont également très utiles pour partager le code à d'autres ingénieurs en insérant des titres et des explications en \textit{Markdown}. Ici, nous nous servirons de cet outil pour observer chaque phase du nettoyage des données et les documenter.
+	\item La bibliothèque \textit{Pandas}\footcite{PandasPythonData} sert à manipuler et analyser les données grâce à un script Python. Elle permet de charger, aligner, manipuler des données dans divers formats comme \gls{csv} ou \gls{json}. Elle les transforme en \textit{DataFrame}, des tableaux de données qui contiennent un ensemble de colonnes et de lignes. Cette bibliothèque est parfaite pour le nettoyage de données\footcite{PandasPythonLibrary2023}.
+	\item Le module \textit{Re} permet d'utiliser les expressions régulières dans un script python\footcite{ModulePythonStandard}, notamment pour créer des \textit{patterns}.
+\end{itemize}
 
 
 \subsubsection{Les données pour la visualisation \textit{bipartite graph}}
 
+Pour la visualisation \textit{bipartite graph}, nous allons prendre les exports en format \gls{csv} des \textit{witnesses 75 et 76} de la table \textit{regions\_pair} de la base de données du projet \gls{vhs}. Pour les charger dans le script Python avec \textit{Pandas}, il faut utiliser la fonction \textit{pd.read\_csv().}
 
+Pour le premier export nous allons isoler les entrées contenant uniquement les préfixes \og wit75 \fg et \og wit116 \fg dans les colonnes \textit{img\_1} et \textit{img\_2}. Dans le deuxième export nous ferons la même chose mais avec les préfixes \og wit76 \fg et \og wit116 \fg. Le but est de comparer les \textit{witnesses 75 et 76} au \textit{witness 116} dans deux visualisations différentes. Pour réaliser cette tâche, il est nécessaire de créer un \textit{pattern} grâce à une expression régulière permettant de détecter si une chaîne de caractère commence par \textit{wit 75 ou wit 76 et wit 116}. Il ne faut pas oublier de supprimer les colonnes citées précédemment qui n'ont aucun intérêt pour notre projet en créant une liste contenant leurs noms et en utilisant la méthode \textit{.drop()}.
+
+Pour finir avec le nettoyage de données de la visualisation \textit{bipartite graph}, il est nécessaire de supprimer les entrées qui contiennent des \textit{similarity types} qui ne nous intéressent pas. Les données issues du projet \gls{vhs} ont été annoté manuellement sont fiables donc nous pouvons nous permettent d'éliminer les \textit{semantic match} et \textit{no match} pour ne garder que les \textit{exact match} et \textit{partial match}. En effet, il ne faut pas représenter les regions pairs détectées automatiquement qui n'en sont pas lorsque nous corrigeons manuellement les résultats. En ce qui concerne, le \textit{semantic match}, ce dernier sert à qualifier deux \textit{regions} qui ne sont pas similaires visuellement mais dont le sens est proche. Notre visualisation ayant pour but de comparer l'aspect visuel des \textit{regions} similaires, nous n'avons pas jugé nécessaire de conserver les \textit{semantic match}. Chaque catégorie correspondant à un chiffre (1, 2, 3, 4), il suffit d'exclure les chiffres 3 et 4. 
 
 
 \subsubsection{Les données pour la visualisation \textit{force-directed layout}}
 
+Pour la visualisation \textit{force-directed layout}, nous n'avons qu'un export de la table \textit{regions pair} de la base de données du projet \gls{eida} dans son intégralité. Cependant, nous pouvons utiliser la même méthode que pour les données du projet \gls{vhs} pour isoler les \textit{regions pairs} des \textit{witnesses 1 et 40} ainsi que les colonnes qui ne nous intéressent pas. 
+
+La différence avec l'autre visualisation réside dans le fait que \textit{Gephi} nécessite l'utilisation de deux fichiers \gls{csv} : un pour les \textit{nodes} et un autre pour les \textit{edges}. 
+
+Pour le fichier des \textit{nodes}, il faut extraire toutes \textit{regions} présentes dans les colonnes \textit{img\_1} et \textit{img\_2} puis supprimer les doublons. Ensuite, il est nécessaire d'attribuer un \textit{identifiant} unique pour chaque \textit{region} et leur assigner l'une des deux cotes des \textit{witnesses}. Nous devons aussi créer une nouvelle colonne pour le numéro de page dans lequel se situe la \textit{region} : Ce dernier se trouve dans le nom de chaque fichier image des \textit{regions}. Pour finir, nous allons créer un \textit{label} pour chaque nœud contenant le nom de la cote du \textit{witness} et le numéro de page pour chacune des \textit{regions}.
+
+Le fichier des \textit{edges} doit contenir pour chaque \textit{regions pair} les identifiants des \textit{regions} \textit{sources} et \textit{target}. Il ne faut pas oublier d'ajouter un \textit{weight} égal à 1 pour \textit{Gephi}. Il s'agit de la force du lien entre deux nœuds qui doit être égale pour toutes les \textit{regions pairs}.
