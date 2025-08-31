@@ -7,6 +7,7 @@
 \usepackage{xspace} % pour la gestion des espaces après les commandes
 \usepackage{minted} % colored source code
 \usepackage{csquotes}
+\usepackage{pdfpages}
 
 
 % Mise en page École des chartes
@@ -195,7 +196,7 @@
 	\clearemptydoublepage
 	
 	\chapter[Besoins et contraintes de conception]{Formalisation des besoins et contraintes de conception}
-	\section{Analyse des pratiques et demandes des chercheurs \gls{eida}}
+	\section{Analyse des pratiques et demandes des chercheurs EIDA}
 	\input{templates/partie2/chapitre5/section13}
 	
 	\section{\textit{Benchmark} des solutions envisagées}
@@ -263,7 +264,9 @@
 	\appendix
 	\part*{Annexes}	
 	\addcontentsline{toc}{part}{Annexes}
-	
+	\includepdf[pages=-]{livrables/cahier_des_charges.pdf}
+	\includepdf[pages=-]{livrables/benchmark_solutions_visualisations.pdf}
+	\includepdf[pages=-, nup=1x2, frame=true, scale=0.9]{livrables/DH_Seminar_2207.pdf}
 	\clearemptydoublepage
 	
 	\backmatter

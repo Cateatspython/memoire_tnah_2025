@@ -1,5 +1,58 @@
+Les visualisations produites dans le cadre de notre projet sont réalisées à partir de données dont la qualité et l'interprétation comportent certaines limites. 
+
+
 \subsection{La question du score de similarité}
+
+Dans la visualisation en \textit{bipartite graph}, nous avons ajouté une fonctionnalité pour afficher le score de similarité au dessus des liens des différentes \textit{regions}. Toutefois, ce dernier demeure ambivalent.
+
+Comme nous l'avons vu précédemment, ce score est calculé avec une similarité de cosinus. En théorie, plus cette dernière est élevée, plus les deux \textit{regions} sont similaires. Cependant, il arrive que ce dernier ne soit pas fiable car il ne tient pas compte de la structure spatiale de l'image. Si cette dernière est un peu tournée ou déformée, le score de similarité chute même si les deux \textit{regions} sont similaires. Parfois, nous rencontrons également le problème inverse : l'algorithme repère deux images dont les traits sont semblables mais qui sont en réalité différentes dans leur signification.
+
+Pour le premier cas, nous pouvons prendre comme exemple deux \textit{regions} extraites du projet \gls{vhs}. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/exemple_score1.png}
+	\label{fig:score_1}
+\end{figure}
+
+Ces deux images sont similaires visuellement.
+Elles partagent la même forme et les mêmes lettres. Cependant, leur score de similarité chute à 54,37 en raison des mentions \og Fig:22. \fg et \og Fig.106 \fg. Ces indications servent à lier le texte et les schémas dans un ouvrage. Il est normal qu'elles soient différentes puisque les \textit{regions} sont situées à des endroits différents dans leurs \textit{witnesses} respectifs. Cependant, notre objectif étant de comparer les images en elles-mêmes, l'inclusion de ces indications dans les \textit{regions} fausse les résultats.
+
+Comme nous l'avons déjà souligné, une déformation des traits dans une figure géométrique présente dans une \textit{region} peut conduire à une baisse du score de similarité. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/exemple_score_2.png}
+	\label{fig:score_2}
+\end{figure}
+
+Dans cet exemple, le score de similarité entre les deux \textit{regions} est de 65.2725 alors qu'elles sont presque identiques. Le problème vient du fait que les traits de l'image de droite sont légèrement effacés et que la forme du schéma diffère un peu. Cependant, les lettres utilisées restent identiques. On retrouve également le même problème lié au texte marginal qui n'est pas similaire. 
+
+Parfois, nous retrouvons le contraire : deux images ayant un sens différent obtiennent un bon score de similarité. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/exemple_score3.png}
+	\label{fig:score_3}
+\end{figure}
+
+Le score de similarité entre ces deux \textit{regions} est de 86,96. Cependant, elles diffèrent par leur forme, l'une est un losange et l'autre un carré et par les lettres qu'elles contiennent. Leur seul point commun réside dans la mention \og fig \fg mais même ici le numéro est différent.
+
 
 \subsection{L'inexactitude du traitement automatique}
 
+Pour la visualisation \textit{force-directed layout}, un autre problème lié aux données se présente : l'inexactitude des résultats du traitement automatique. En effet, les données que nous avons utilisé n'ont pas été annotées par les chercheurs. Les erreurs potentielles n'ont donc pas été corrigées.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{images/exemple_traitement_auto_1.png}
+	\label{fig:traitement}
+\end{figure}
+
+Dans cet exemple, on observe que de nombreuses \textit{regions} ne sont pas réellement similaires mais elle apparaissent quand même parmi les résultats du traitement automatique.
+
+La présence de \textit{regions} peu similaires contribue à créer une importante masse de données. Comme nous l'avons vu précédemment, cette abondance de similarités peu pertinentes nuit à la lisibilité de la visualisation.
+
 \subsection{Les règles d'annotation}
+
+Enfin, l'un des principaux problèmes liés aux données réside dans l'annotation des chercheurs qui peut se révéler subjective dans certains cas. Lorsque la similarité entre deux \textit{regions} est évidente, il n'y a aucune difficulté : il s'agit d'un \textit{exact match}. En revanche, certains cas posent davantage de difficulté. Les chercheurs ne se limitent pas à la ressemblance visuelle lorsqu'ils annotent les résultats. Ils sont capables d'identifier deux \textit{regions} qui, bien que n'étant pas totalement similaires, représentent la même notion. Cependant, des divergences d'interprétation peuvent avoir lieu, notamment avec les \textit{partial match} et \textit{semantic match}, et parfois même pour les \textit{exact match}. C'est pour cette raison que des guides d'annotation sont créés afin d'aider les chercheurs à identifier clairement ce qu'est un \textit{exact match}, un \textit{partial match} ou un \textit{semantic match}. Pour l'instant, même si l'annotation des similarités a commencé, aucun guide n'existe pour le projet \gls{eida}. Cependant, sa création est en cours de réflexion.
