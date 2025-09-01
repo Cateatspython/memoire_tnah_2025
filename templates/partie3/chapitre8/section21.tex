@@ -1,0 +1,35 @@
+A présent, nous allons vérifier que les objectifs prédéfinis auparavant ont bien été atteints. 
+
+\subsection{L'aide à l'annotation}
+
+L'un des premiers objectifs était de créer une visualisation \textit{force-directed layout} pour aider les chercheurs à analyser les \textit{regions pairs} avant de les annoter dans le cadre du projet \gls{eida}.
+
+Cependant, cette piste a rapidement été mise de côté en raison de la masse de données trop importante. Nous avons essayé de n'intégrer que deux \textit{witnesses} et de supprimer les liens internes, mais même en procédant de cette manière, les nœuds et les liens sont trop nombreux. Cela rend la visualisation illisible. En effet, le traitement automatique des similarités produit un nombre conséquent de résultats dont beaucoup ne sont pas pertinents. Nous nous retrouvons alors avec une grande quantité de données impossible à visualiser correctement pour procéder à l'annotation par la suite. 
+
+\subsection{L'exploration des données}
+
+Le second objectif à atteindre était l'exploration des données à des fins de recherche. Les chercheurs veulent visualiser les \textit{regions} similaires afin de retracer la diffusion et la transmission des idées dans le temps et dans l'espace. Les \textit{regions pairs} peuvent être étudiées sous différentes approches. 
+
+Nous espérons que la visualisation \textit{force-directed layout}, dans sa version finale, permettra de représenter plusieurs \textit{witnesses} à la fois. En effet, sa structure en réseaux se prête parfaitement à l'analyse de \textit{regions} provenant de différentes traditions et les liens qui existent entre elles. Avec cette approche, nous pouvons comparer les réutilisations et les modifications des différents diagrammes. Il est également possible de dégager des phénomènes et des irrégularités au sein du corpus de \textit{regions}.
+
+La visualisation \textit{bipartite graph} nous permet d'examiner les \textit{regions} similaires dans deux \textit{witnesses}.
+
+Elle s'avère particulièrement utile dans le cadre de la collation d'illustrations dans différents témoins. Par exemple, le projet \gls{vhs} traite des images tirées de manuels de pharmacopées. 
+Selon le \textit{witness} dans lequel elles se trouvent, les images peuvent être classées par ordre alphabétique ou par vertus médicinales car elles ne sont pas forcément placées à côté du texte qui les mentionne\footcite{kaouaImageCollationMatching2021}. 
+
+La visualisation \textit{bipartite graph} permet donc d'étudier la réorganisation des images dans deux témoins contenant une même œuvre, leur réutilisation d'une œuvre à une autre ou la diffusion d'images représentant des concepts généraux régulièrement présents dans une discipline spécifique.
+
+Pour finir, quand il sera possible de choisir les \textit{witnesses} à comparer dans ces deux visualisations, les chercheurs pourront réaliser des découvertes par sérendipité. % à compléter ???
+
+
+\subsection{La médiation scientifique}
+
+Ces deux visualisations auront aussi une mission de médiation scientifique pour les chercheurs et éventuellement pour le grand public.
+
+Au début de notre projet de visualisation, nous avions évoqué le besoin exprimé par les chercheurs d'avoir des supports pour leurs présentations lors de conférence ou de cours. Il est également possible de les intégrer à des publications scientifiques. Leur avantage est qu'elles peuvent se révéler utile à la fois pour les chercheurs en histoire mais aussi pour ceux en \textit{computer vision}. Elles offrent aux historiens la possibilité de présenter les résultats de leur recherche sur l'histoire de l'astronomie mais elles permettent également aux chercheurs en \textit{computer vision} de visualiser et de communiquer les résultats des algorithmes qu'ils développent. 
+
+Nous pouvons envisager de rendre ces visualisations accessibles à un public plus large notamment par le biais de la future interface publique d'\gls{eida}. Il serait possible de mettre en avant cette dernière lors d'événements comme les Journée européennes du patrimoine à l'Observatoire de Paris pour le projet \gls{eida} en proposant aux visiteurs de scanner un QR Code pour y accéder. Cependant, en raison de la nature des visualisations, cette tâche peut s'avérer compliquée. En effet, le but est d'analyser les liens de similarité entre les différentes \textit{regions} extraite des \textit{witnesses}. Ce sujet est complexe à comprendre et peut ne pas susciter l'intérêt du grand public. La visualisation \textit{bipartite graph} est plus facilement compréhensible car elle est composée d'éléments simples, à savoir des images similaires reliées entre elles.
+
+\subsection{La mise en contexte du corpus}
+
+Nous avons rapidement abandonné les visualisations uniquement dédiées à la présentation du corpus. Néanmoins, il est toujours possible d'accéder aux métadonnées. En effet, lorsque nous cliquons sur un nœud, une fenêtre s'ouvre sur la droite sur \textit{Gephi Lite} avec les informations le concernant comme son identifiant, le nom de la \textit{region}, la cote du \textit{witness} et le numéro de page. Dans la visualisation finale, nous pourrons garder cette fonctionnalité en ajoutant d'autres métadonnées comme le lieu de conservation ou le nom de l'œuvre.
