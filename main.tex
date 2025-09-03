@@ -18,11 +18,11 @@
 
 \usepackage{tocbibind}
 \usepackage[backend=biber, sorting=nyt, style=enc, minbibnames=10, maxbibnames=10]{biblatex}
-\addbibresource{bibliographie/biblio_astro.bib}
-\addbibresource{bibliographie/biblio_computervision.bib}
-\addbibresource{bibliographie/biblio_visualisations.bib}
-\addbibresource{bibliographie/biblio_programmation.bib}
-\addbibresource{bibliographie/biblio_developpement_web.bib}
+\addbibresource{bibliographie/histoiresciences.bib}
+\addbibresource{bibliographie/computervision.bib}
+\addbibresource{bibliographie/visualisations.bib}
+\addbibresource{bibliographie/documentationtechnique.bib}
+\addbibresource{bibliographie/developpementweb.bib}
 \nocite{*}
 \defbibnote{intro}{Cette bibliographie présente toutes les ressources utilisées, de tout type, citées ou non, par simple ordre alphabétique.}
 
@@ -107,6 +107,12 @@
 	\addcontentsline{toc}{chapter}{Remerciements}
 	
 	\part*{Bibliographie}
+	
+	\printbibliography[keyword={HS},title={Histoire des sciences}]
+	\printbibliography[keyword={CV},title={Intelligence artificielle}]
+	\printbibliography[keyword={VZ},title={Visualisation}]
+	\printbibliography[keyword={DW},title={Développement web}]
+	\printbibliography[keyword={DT},title={Documentation technique}]
 	
 	\chapterNo{Introduction}
 	\addcontentsline{toc}{chapter}{Introduction}
