@@ -69,11 +69,15 @@
 \newacronym{ui}{UI Design}{User Interface Design}
 \newacronym{rgaa}{RGAA}{Référentiel général d'amélioration de l'accessibilité}
 \newacronym{wcag}{WCAG}{Web content accessibility guidelines}
+\newacronym{pdf}{PDF}{Portable Document Format}
+\newacronym{jpg}{JPG}{Joint Photographic Experts Group}
+\newacronym{png}{PNG}{Portable Network Graphic}
 
 % COMMANDS
 \newcommand{\enc}{École nationale des chartes\xspace}
 \newcommand{\fair}{\gls{fair}\xspace}
 \newcommand{\api}{\gls{api}\xspace}
+\newcommand{\IX}{\textsc{ix}\ieme{}\xspace}
 \newcommand{\XII}{\textsc{xii}\ieme{}\xspace}
 \newcommand{\XIII}{\textsc{xiii}\ieme{}\xspace}
 \newcommand{\XIV}{\textsc{xiv}\ieme{}\xspace}
@@ -161,18 +165,20 @@
 	
 	\chapter{AIKON et l'automatisation des traitements}
 	
+	A l'ère du numérique, l'intelligence artificielle, notamment sous la forme de la \textit{computer vision}, permet le traitement automatique d'images. Elle offre ainsi la capacité d'analyser rapidement de vastes corpus iconographiques. Dans ce chapitre, nous allons parler de l'application AIKON et de son utilisation sur le corpus du projet \gls{eida}.
+	
 	\section[La plateforme AIKON]{Le choix de la vision artificielle pour ces objets d'étude : la plateforme AIKON}
 	
 	\input{templates/partie1/chapitre2/section4} 
-	
-
-
 	
 	\section{Les fonctionnalités de computer vision dans AIKON}
 	\input{templates/partie1/chapitre2/section5}
 	
 	\section[Les interfaces existantes]{De l'annotation manuelle au traitement de masse : les interfaces existantes}
 	\input{templates/partie1/chapitre2/section6}
+	
+	
+	Nous avons exploré le fonctionnement de l'application AIKON en détaillant ses principales fonctionnalités : l'extraction automatique de \textit{regions}, la reconnaissance des similarités et le calcul d'un score de similarité. Nous disposons à présent de résultats générés par ces traitements : les \textit{regions} extraites et des \textit{regions pairs} associées à un score de similarité. Nous devons à présent déterminer comment exploiter et visualiser ces résultats.
 	
 	\clearemptydoublepage
 	

@@ -1,15 +1,17 @@
+A présent, nous allons expliquer le fonctionnement de l'extraction des \textit{regions}, de la reconnaissance et du calcul de similarité. Ces derniers reposent sur l'utilisation d'algorithmes.
+
 \subsection{L'extraction des regions}
 
-Il existe plusieurs algorithmes pour extraire des régions dans \gls{aikon}.
+Il existe plusieurs algorithmes pour extraire des régions dans AIKON. Le modèle de référence utilisé pour l'extraction automatique dans \gls{eida} et \gls{vhs} est \gls{yolo}\footcite{jocherYOLOv5Ultralytics2020}. Ce dernier peut être appliqué pour différentes tâches de vision artificielle comme la segmentation et la détection d'objet.
 
-Le modèle servant de base pour les modèles d'extraction automatique de \gls{eida} et \gls{vhs} est \gls{yolo}\footcite{jocherYOLOv5Ultralytics2020}. Ce dernier peut être utilisé pour différentes tâches de vision artificielle comme la segmentation et la détection d'objet. Pour être adapté à ces deux projets, il a été finetuné sur des illustrations scientifiques historiques pour \gls{vhs} et sur des diagrammes astronomiques pour \gls{eida}, annotés par les chercheurs au préalable via l'interface \gls{aikon}. 
+Pour être adapté à ces deux projets, il a été \textit{fine-tuné} sur des illustrations scientifiques historiques pour \gls{vhs} et sur des diagrammes astronomiques pour \gls{eida} annotés par les chercheurs au préalable. 
 
 
 \subsection{La reconnaissance et le calcul de similarité}
 
 L'algorithme utilisé pour reconnaître automatiquement les similarités et calculer leur score est \textit{SegSwap}. Ce dernier a été entraîné uniquement sur des données synthétiques. Le but de cet algorithme est de retrouver des correspondances exactes sur des couples d'images avec uniquement des variations de style.
-Cet algorithme prend alors en entrée deux images et il retourne une matrice de transposition. Pour constituer le corpus d'entraînement, des images hybrides ont été générées automatiquement. Il faut alors extraire d'un autre modèle des objets d'une image avant de le coller sur une autre. Ensuite, du bruit et des filtres sont ajoutés. Il est alors nécessaire d'utiliser l'image originelle avec l'objet et l'image hybride en plus de la matrice de correspondance. 
+Cet algorithme prend en entrée deux images et il retourne une matrice de transposition. Pour constituer le corpus d'entraînement, des images hybrides ont été générées automatiquement. Il faut extraire d'un autre modèle des objets d'une image avant de le coller sur une autre. Ensuite, du bruit et des filtres sont ajoutés. Il est alors nécessaire d'utiliser l'image originelle avec l'objet et l'image hybride en plus de la matrice de correspondance. 
 
-En raison de son coût élevé, le calcul de score de similarité est calculé avec un algorithme plus simple, une similarité de cosinus, avant son utilisation. Le but est de récupérer l'\textit{embedding} vectoriel d'une image et le comparer avec celui d'une autre image. Plus l'angle entre les deux vecteurs est faible, plus les images sont considérées comme similaires. Ensuite, \textit{SegSwap} est appliqué uniquement sur les vingt images dont le score de similarité est le meilleur.
+En raison de son coût élevé, le calcul du score de similarité est réalisé avec un algorithme plus simple, une similarité de cosinus, avant son utilisation. Le but est de récupérer l'\textit{embedding} vectoriel d'une image et le comparer avec celui d'une autre. Plus l'angle entre les deux vecteurs est faible, plus les images sont considérées comme similaires. Ensuite, \textit{SegSwap} est appliqué uniquement sur les vingt images dont le score de similarité est le meilleur.
 
 

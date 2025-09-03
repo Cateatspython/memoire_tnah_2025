@@ -1,4 +1,4 @@
-Les différents projets utilisant AIKON possèdent leur propre interface avec des bases de données distinctes hébergés sur des serveurs différents. Cependant, son aspect et son fonctionnement restent les mêmes.
+Les différents projets utilisant AIKON possèdent leur propre interface avec des bases de données distinctes hébergées sur des serveurs différents. Cependant, son aspect et son fonctionnement restent les mêmes.
 
 \begin{figure}[h]
 	\centering
@@ -15,9 +15,9 @@ Les différents projets utilisant AIKON possèdent leur propre interface avec de
 	\label{fig:interface_accueil}
 \end{figure}
 
-Pour l'instant, ni \gls{vhs}, ni \gls{eida} ne possède d'interface publique. Les chercheurs utilisent actuellement l'interface administrateur, c'est-à-dire le \textit{back-office}. Ils possèdent chacun un compte avec un statut \og admin \fg tandis que les ingénieurs en charge du développement et de la gestion de l'application sont en mode \og super-admin \fg. L'avantage de ces interfaces est qu'il n'est pas nécessaire de savoir coder ou faire des requêtes \gls{sql}.
+Pour l'instant, ni \gls{eida}, ni \gls{vhs} ne disposent d'interface publique. Les chercheurs utilisent actuellement l'interface administrateur, c'est-à-dire le \textit{back-office}. Ils possèdent chacun un compte avec un statut \og admin \fg tandis que les ingénieurs en charge du développement et de la gestion de l'application sont \og super-admin \fg. L'avantage de ces interfaces est qu'il n'est pas nécessaire de savoir coder ou faire des requêtes \gls{sql}.
 
-Un \textit{User's guide} détaillant les différentes options a été rédigé. Nous nous concentrerons sur les principales fonctionnalités.
+Un \textit{User's guide}\footnote{Ce \textit{User's guide} est disponible sur le repository Github du mémoire dans les livrables techniques : \url{https://github.com/Cateatspython/memoire_tnah_2025/tree/main/livrables}} détaillant les différentes options a été rédigé. La rédaction de ce type de documentation par les ingénieurs joue un rôle essentiel. Elle constitue un support permettant aux chercheurs de comprendre le fonctionnement de l'interface. Nous nous concentrerons sur les principales fonctionnalités.
 
 
 
@@ -26,9 +26,9 @@ Un \textit{User's guide} détaillant les différentes options a été rédigé. 
 
 Avant d'effectuer des traitements automatiques, l'application AIKON permet de constituer un corpus, le gérer et le partager. 
 
-Pour ajouter la numérisation d'un document comme un manuscrit par exemple, il faut ajouter un nouveau  \textit{witness}. Il est possible de renseigner énormément de métadonnées pour le décrire comme sa cote, son lieu de conservation ou son type de pagination par exemple. Pour certaines catégories, comme c'est le cas avec le lieu de conservation, si celui de notre document n'est pas déjà disponible dans la base de données, nous devons le créer. Il pourra alors être réutilisé par les autres utilisateurs par la suite. En ce qui concerne le format de la numérisation, AIKON accepte les pdf, les manifestes \gls{iiif} ainsi que les images en format jpg ou png. 
+Pour ajouter la numérisation d'un document comme un manuscrit par exemple, il faut ajouter un nouveau  \textit{witness}. Il est possible de renseigner énormément de métadonnées pour le décrire comme sa cote, son lieu de conservation ou son type de pagination par exemple. Pour certaines catégories, comme c'est le cas avec le lieu de conservation, si celui de notre document n'est pas déjà disponible dans la base de données, nous devons le créer. Il pourra alors être réutilisé par les autres utilisateurs par la suite. En ce qui concerne le format de la numérisation, AIKON accepte les \gls{pdf}, les manifestes \gls{iiif} ainsi que les images en format \gls{jpg} ou \gls{png}.
 
-Une fois le \textit{witness} ajouté à la base de données, les autres chercheurs inscrits sur la plateforme pourront accéder à lui et aux résultats des différents traitements qui lui seront appliqués. Un formulaire est d'ailleurs disponible pour affiner ses recherches.
+Une fois le \textit{witness} ajouté à la base de données, les autres chercheurs inscrits sur la plateforme pourront y accéder ainsi qu'aux résultats des différents traitements qui y seront appliqués. Un formulaire est d'ailleurs disponible pour affiner ses recherches.
 
 \begin{figure}[H]
 	\centering
@@ -37,17 +37,17 @@ Une fois le \textit{witness} ajouté à la base de données, les autres chercheu
 	\label{fig:apercu_witnesses}
 \end{figure}
 
-Les différents \textit{witnesses} peuvent être organisés en sous-ensembles cohérents. Par exemple, nous pouvons réunir tous les volumes d'une même édition disponibles dans différentes institutions. Il est d'ailleurs aussi possible de réunir plusieurs \textit{witnesses} en un \textit{work} quand il s'agit de la même œuvre.
+Les différents \textit{witnesses} peuvent être organisés en sous-ensembles cohérents. Par exemple, nous pouvons réunir tous les volumes d'une même édition disponibles dans différentes institutions. Il est aussi possible de réunir plusieurs \textit{witnesses} en un \textit{work} quand il s'agit de la même œuvre.
 
 Pour créer sa propre collection de \textit{witnesses}, nous avons la possibilité de créer des \textit{document sets} en cliquant sur \og Add to selection \fg. Cette fonctionnalité est utile notamment lorsque nous voulons lancer un traitement pour plusieurs \textit{witnesses} à la fois.
 
-\subsection{L'extraction des regions}
+\subsection{L'extraction des \textit{regions}}
 
-AIKON propose une fonctionnalité permettant d'extraire des \textit{regions}. Dans le cas d'\gls{eida}, il s'agit des diagrammes. Cette action peut se faire de manière manuelle, notamment lors de l'entraînement de l'algorithme ou lorsque ce dernier fait une erreur. 
+AIKON propose une fonctionnalité permettant d'extraire des \textit{regions}. Dans le cas d'\gls{eida}, il s'agit de diagrammes. Cette action peut se faire de manière manuelle, notamment lors de l'entraînement de l'algorithme ou lorsque ce dernier fait une erreur. 
 
 \subsubsection{L'annotation manuelle avec Mirador}
 
-Pour annoter de manière manuelle les \textit{regions} d'un \textit{witness}, il faut se servir de Mirador\footcite{Mirador}, un outil \textit{open-source} d'annotation d'image. Afin d'y accéder, il faut se rendre sur la page d'un des \textit{witnesses} et choisir \og \textit{Manually annotate}\fg. Pour définir une \textit{region}, il faut l'encadrer en utilisant le carré mis à disposition dans la barre de fonctionnalité.
+Pour annoter de manière manuelle les \textit{regions} d'un \textit{witness}, il faut se servir de Mirador\footcite{Mirador}, un outil \textit{open-source} d'annotation d'image. Afin d'y accéder, nous devons nous rendre sur la page d'un des \textit{witnesses} et choisir \og \textit{Manually annotate}\fg. Pour définir une \textit{region}, il est nécessaire de l'encadrer en utilisant le carré mis à disposition dans la barre de fonctionnalités.
 
 \begin{figure}[H]
 	\centering
@@ -57,10 +57,10 @@ Pour annoter de manière manuelle les \textit{regions} d'un \textit{witness}, il
 \end{figure}
 
 
-\subsubsection{L'extraction automatique des regions}
+\subsubsection{L'extraction automatique des \textit{regions}}
 
-Annoter manuellement chaque \textit{region} est chronophage. Heureusement, il existe des algorithmes pour réaliser une extraction automatique de toutes les \textit{regions} d'un \textit{witness}. 
-Pour faire cette opération, il faut se rendre sur la page d'un des \textit{witnesses} puis choisir \og textit{Automatic region extraction} \fg. Comme nous l'avons vu précédemment, il existe plusieurs algorithmes. Pour les diagrammes astronomiques, le plus approprié est \og \textit{Diagram extraction (YOLO model fine-tuned on historical diagrams)}\fg.
+Annoter manuellement chaque \textit{region} est chronophage. Il existe des algorithmes pour réaliser une extraction automatique de toutes les \textit{regions} d'un \textit{witness}. 
+Pour faire cette opération, il faut se rendre sur la page d'un des \textit{witnesses} puis choisir \og \textit{Automatic region extraction} \fg. Comme nous l'avons vu précédemment, il existe plusieurs algorithmes. Pour les diagrammes astronomiques, le plus approprié est \og \textit{Diagram extraction (YOLO model fine-tuned on historical diagrams)}\fg.
 
 
 \begin{figure}[h]
@@ -83,13 +83,13 @@ Une fois le traitement terminé, nous pouvons visualiser les différents diagram
 
 \subsection{La constitution de correspondances entre les regions}
 
-\subsubsection{La reconnaissance automatique et le calcul du score de similarités}
+\subsubsection{La reconnaissance automatique et le calcul du score de similarité}
 
-La plateforme AIKON propose une fonctionnalité de reconnaissance automatique de similarités couplée à la possibilité de calculer un score de similarité en chaque \textit{region} similaire. 
+La plateforme AIKON propose une fonctionnalité de reconnaissance automatique de similarités couplée à la possibilité de calculer un score de similarité pour chaque \textit{region} similaire. 
 
-Pour commencer, il faut sélectionner les différents \textit{witnesses} à comparer dans un \textit{document set}. Ensuite, nous devons nous rendre dans l'onglet \og \textit{Computer vision tasks} \fg puis cliquer sur \og \textit{Add new treatment} \fg et choisir \og \textit{Compute similarity score} \fg dans \og \textit{Task type} \fg. Il est aussi possible de faire une extraction automatique de \textit{regions} dans plusieurs \textit{witnesses} au même endroit. Pour extraire des diagrammes, la meilleure solution est d'utiliser l'algorithme \textit{SegSwap} que nous avions cité précédemment. 
+Pour commencer, il faut sélectionner les différents \textit{witnesses} à comparer dans un \textit{document set}. Ensuite, nous devons nous rendre dans l'onglet \og \textit{Computer vision tasks} \fg puis cliquer sur \og \textit{Add new treatment} \fg et choisir \og \textit{Compute similarity score} \fg dans \og \textit{Task type} \fg. Pour extraire des diagrammes, la meilleure solution est d'utiliser l'algorithme \textit{SegSwap} que nous avons cité précédemment. 
 
-\begin{figure}[H]
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/similarities.png}
 	\caption{Aperçu des différentes \textit{regions} similaires dans un \textit{witness}}
@@ -97,7 +97,7 @@ Pour commencer, il faut sélectionner les différents \textit{witnesses} à comp
 \end{figure}
 
 Une fois le traitement réalisé, nous pouvons observer les résultats en retournant sur un des \textit{witnesses}. 
-IL est possible de les filtrer grâce au formulaire en haut qui propose de choisir quels \textit{witnesses} nous voulons comparer. IL y a également un curseur pour choisir le score de similarité minimal.
+Il est possible de les filtrer grâce au formulaire en haut qui propose de choisir quels \textit{witnesses} nous voulons comparer. Il y a également un curseur pour choisir le score de similarité minimal.
 
 \subsubsection{L'annotation des résultats}
 
@@ -111,7 +111,7 @@ Même si l'objectif final serait de créer des outils d'intelligence artificiell
 	\label{fig:annotations_similarites}
 \end{figure}
 
-Pour annoter les différentes \textit{regions}, il y a un petit panneau en dessous de chacune d'entre-elles avec plusieurs cases qui représentent le type d'annotation : 
+Pour annoter les différentes \textit{regions}, il y a un petit panneau en dessous de chacune d'entre elles avec plusieurs cases qui représentent le type d'annotation : 
 \begin{enumerate}
 	\item \textit{Exact match} : Les deux \textit{regions} sont parfaitement similaires.
 	\item \textit{Partial match} : Les deux \textit{regions} sont un peu différentes.
@@ -119,8 +119,9 @@ Pour annoter les différentes \textit{regions}, il y a un petit panneau en desso
 	\item \textit{No match} : les deux \textit{regions} ne sont pas du tout similaires.
 \end{enumerate} 
 
+\subsection{Une future interface publique ?}
 
-En ce qui concerne le projet \gls{eida}, l'objectif final serait de développer une interface publique sur le même modèle que celle du projet \gls{dishas}.
+Il serait intéressant par la suite de développer une interface publique pour le projet \gls{eida} sur le même modèle que celle du projet \gls{dishas}.
 
 \begin{figure}[H]
 	\centering
@@ -129,4 +130,4 @@ En ce qui concerne le projet \gls{eida}, l'objectif final serait de développer 
 	\label{fig:dishas-interface}
 \end{figure}
 
-L'objectif principal d'une interface publique ou \textit{front-office} est de mettre à disposition des utilisateurs les différents outils développés au cours du projet ainsi que les résultats obtenus. Lors de sa création, le dialogue avec les chercheurs est primordial. En effet, il doit y avoir un \og fil conducteur \fg suivant les différentes hypothèses scientifiques ayant orienté leur réflexion dans la navigation entre les différentes pages. Les données doivent être contextualisées dans leur corpus ainsi que dans le projet en général\footcite{albouyMediationDonneesRecherche2019}.Dans ce contexte, il est essentiel de réaliser des visualisations afin de les rendre accessible, de mieux les comprendre et de les explorer de manière interactive. 
+L'objectif principal d'une interface publique ou \textit{front-office} est de mettre à disposition des utilisateurs les différents outils développés au cours du projet ainsi que les résultats obtenus. Lors de sa création, le dialogue avec les chercheurs est primordial. En effet, il doit y avoir un \og fil conducteur \fg suivant les différentes hypothèses scientifiques ayant orienté leur réflexion dans la navigation entre les différentes pages. Les données doivent être contextualisées dans leur corpus ainsi que dans le projet en général\footcite{albouyMediationDonneesRecherche2019}. Il est alors essentiel de créer des visualisations pour rendre les données accessibles, en faciliter la compréhension et permettre une exploration interactive. \\
