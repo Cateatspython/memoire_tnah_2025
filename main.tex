@@ -122,6 +122,10 @@
 	
 	\chapterNo{Introduction}
 	\addcontentsline{toc}{chapter}{Introduction}
+	\begin{displayquote}
+	We provide a brief tour through the "visualization zoo," showcasing techniques for visualizing and interacting with diverse data sets. In many situations, not only will simple data graphics suffice, they may be preferable. However, we will focus on a few of the more sophisticated and unusual techniques that have been developed to deal with complex data sets. After all, you don't go to the zoo to see chihuahuas and raccoons — you go to admire the majestic polar bear, the graceful zebra, and the terrifying Sumatran tiger. Analogously, we will cover some of the more exotic (but practically useful!) forms of visual data representation.\footnote{\og Nous proposons un bref tour à travers le \og zoo de la visualisation\fg, présentant des techniques pour visualiser et interagir avec des ensembles de données variés. Dans de nombreuses situations, de simples graphiques de données suffisent, et ils peuvent même être préférables. Cependant, nous nous concentrerons sur quelques-unes des techniques les plus sophistiquées et inhabituelles qui ont été développées pour traiter des ensembles de données complexes. Après tout, on ne va pas au zoo pour voir des chihuahuas et des ratons laveurs — on y va pour admirer le majestueux ours polaire, le gracieux zèbre et le terrifiant tigre de Sumatra. De manière analogue, nous aborderons certaines formes de représentation visuelle de données plus exotiques (mais néanmoins très utiles!)\fg. \cite{heerTourVisualizationZoo}}. 
+	\end{displayquote}
+	
 	
 	La mission principale de ce stage était de concevoir des preuves de concept pour des visualisations à partir des données des projets EIDA et VHS. Ces dernières ont pour but de tester la faisabilité et la pertinence de visualisations à intégrer au sein de l’application de traitement semi-automatique de données AIKON. Avant de les développer, j’ai rédigé un cahier des charges et un benchmark des solutions techniques envisageables. Ces livrables techniques m’ont permis de définir des objectifs clairs ainsi que les limites de mon projet. Afin de bien comprendre le fonctionnement de l’application AIKON et l’expérience utilisateur qu’elle procure, j’ai rédigé une documentation pour les différentes fonctionnalités de l’interface utilisateur. Pour clore ce stage, un Digital Humanities Seminar a été organisé pour partager aux chercheurs mes recherches, les différentes étapes de réalisation des visualisations et les résultats obtenus. Plus largement, ce travail m’a amené à réaliser une réflexion approfondie autour du concept de visualisation des données en sciences humaines et sociales que je vais exposer dans ce mémoire. 
 	
@@ -225,6 +229,10 @@
 	\clearemptydoublepage
 	
 	\chapter[Besoins et contraintes de conception]{Formalisation des besoins et contraintes de conception}
+	
+	Durant ce stage, nous allons créer des preuves de concept de visualisations pour l'application AIKON. Avant d'entamer leur réalisation, il est essentiel de définir clairement le cadre dans lequel elles vont s'inscrire. Nous devons identifier et formaliser les besoins auxquels elles doivent répondre ainsi que les contraintes techniques. Cette étape de préparation est essentiel pour orienter les choix de développement et la pertinence des solutions proposées.
+	
+	
 	\section{Analyse des pratiques et demandes des chercheurs EIDA}
 	\input{templates/partie2/chapitre5/section13}
 	
@@ -233,6 +241,8 @@
 	
 	\section[Le cahier des charges]{Cahier des charges : objectifs scientifiques et contraintes techniques}
 	\input{templates/partie2/chapitre5/section15}
+	
+	Nous avons formalisé les besoins et les contraintes pour la création de deux preuves de concept adaptées aux chercheurs. Ces derniers ont émis le besoin de contextualiser les \textit{regions} au sein du corpus et de visualiser les similarités entre ces dernières. Un \textit{benchmark} a été réalisé afin d'explorer les différentes solutions disponibles et de vérifier leur faisabilité technique. Cette analyse nous a mené à abandonner l'idée de créer une visualisation pour présenter le corpus. En effet, se concentrer sur cette dernière n'aurait pas été pertinent car il ne s'agit pas d'une priorité dans l'état du projet actuel. Par la suite, l'élaboration d'un cahier des charges nous a permis de fixer les objectifs et les contraintes techniques. Nous disposons maintenant des bases pour la réalisation de nos preuves de concept.
 	
 	\clearemptydoublepage
 	
@@ -293,8 +303,14 @@
 	\appendix
 	\part*{Annexes}	
 	\addcontentsline{toc}{part}{Annexes}
-	\includepdf[pages=-]{livrables/cahier_des_charges.pdf}
+	
+	\chapter[Benchmark]{\label{benchmark}Benchmark}
 	\includepdf[pages=-]{livrables/benchmark_solutions_visualisations.pdf}
+	 \clearemptydoublepage
+	\chapter[Cahier des charges]{\label{cahierdescharges}Cahier des charges}
+	\includepdf[pages=-]{livrables/cahier_des_charges.pdf}
+	 \clearemptydoublepage
+	\chapter[Présentation du DH Seminar]{\label{dhseminar}Présentation du DH Seminar}
 	\includepdf[pages=-, nup=1x2, frame=true, scale=0.9]{livrables/DH_Seminar_2207.pdf}
 	\clearemptydoublepage
 	

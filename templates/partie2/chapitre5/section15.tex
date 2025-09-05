@@ -1,31 +1,27 @@
-Le cahier des charges est un document qui définit les objectifs, les besoins, les livrables, les contraintes ainsi que les critères de validation d'un projet.  
+Le cahier des charges\footnote{Le cahier des charges est disponible dans l'annexe B du mémoire ainsi que dans le répertoire des livrables techniques sur Github : \url{https://github.com/Cateatspython/memoire_tnah_2025/tree/main/livrables}} est un document qui définit les objectifs, les besoins, les livrables, les contraintes ainsi que les critères de validation d'un projet.  
 
 Dans cette partie, nous évoquerons les éléments les plus importants, c'est-à-dire les objectifs, les données à disposition ainsi que les fonctionnalités attendues pour les deux visualisations retenues.
 
 \subsection{Les objectifs}
 
-Dans le cadre de notre projet, nous allons réaliser deux preuves de concept de visualisations pour l'application \gls{aikon}.
+Dans le cadre de notre projet, nous allons réaliser deux preuves de concept de visualisations pour l'application AIKON.
 
-Pour les deux visualisations, nous nous allons nous appuyer sur les \textit{regions} de deux \textit{witnesses}.
-La première servira à comparer les \textit{region pairs} de \textit{witnesses} issus du projet \gls{vhs}. La deuxième aura pour but de visualiser les \textit{regions} similaires de données extraites du projet \textit{eida} afin de comparer les résultats de la reconnaissance automatique de similarités avant l'annotation manuelle des chercheurs. 
+Pour ces deux visualisations, nous nous appuierons sur les \textit{regions} de deux \textit{witnesses}.
+La première servira à comparer les \textit{regions pairs} de \textit{witnesses} issus du projet \gls{vhs}. La deuxième aura pour but de visualiser les \textit{regions} similaires de données extraites du projet \gls{eida} afin de comparer les résultats de la reconnaissance automatique de similarités avant l'annotation manuelle des chercheurs. 
 
 \subsection{Les contraintes techniques}
 
-Pour mener à bien ce projet, nous nous heurtons à quelques contraintes techniques. 
-
+Pour mener à bien ce projet, nous nous heurtons à plusieurs contraintes techniques. 
 Tout d'abord, le temps de réalisation est limité à la durée du stage qui est de quatre mois.
-
 Ensuite, il n'est pas possible de se connecter à la base de données car il s'agit de preuves de concept qui ne seront pas intégrées telles quelles dans l'application. 
-
-Il faut aussi prendre en compte la qualité des données. Pour celles du projet \gls{vhs}, les résultats du traitement automatique ont été annotés par les chercheurs. Même s'il peut rester une part de subjectivité pour définir si deux \textit{regions} sont réellement des \textit{region pairs}, elles sont fiables. Les données issues du projet \gls{eida} sont les résultats bruts de la reconnaissance automatique des similarités. Il faut donc prêter attention à la fiabilité des \textit{region pairs}. De plus, il risque d'y avoir une quantité plus importante de données que si elles avaient été annotées au préalable par les chercheurs comme pour celles de \gls{vhs}. 
-
-Pour finir, les visualisations doivent être adaptables à tous les projets utilisant l'application \gls{aikon}.
+Il faut aussi prendre en compte la qualité des données. Pour celles du projet \gls{vhs}, les résultats du traitement automatique ont été annotés par les chercheurs. Même s'il peut rester une part de subjectivité pour définir si deux \textit{regions} sont réellement des \textit{region pairs}, elles sont fiables. Les données issues du projet \gls{eida} sont les résultats bruts de la reconnaissance automatique de similarités. Il faut donc prêter attention à la fiabilité des \textit{regions pairs}. De plus, le volume de données pourrait être plus important que si elles avaient été annotées au préalable par les chercheurs comme pour celles de \gls{vhs}. 
+Pour finir, les visualisations doivent être adaptables à tous les projets utilisant l'application AIKON.
 
 \subsection{Les données}
 
 Etant donné que nous ne pouvons pas nous connecter directement à la base de données, nous allons donc utiliser des exports \gls{csv} de la table \textit{region-pairs}.
 
-Pour la visualisation en \textit{bipartite graph}, nous utiliserons les données du projet \gls{vhs} et pour celle en \textit{force-directed layout}, celles du projet \gls{eida}.
+Pour la visualisation \textit{bipartite graph}, nous avons été contraints d'utiliser les données du projet \gls{vhs} car celles du projet \gls{eida} n'avaient pas encore été annotées par les chercheurs. Le but de la visualisation \textit{force-directed layout} étant de comparer les \textit{regions pairs} avant la phase d'annotation, nous avons pu utiliser les données de la table \textit{region-pairs} du projet \gls{eida}.
 
 \subsection{Les fonctionnalités}
 
@@ -35,4 +31,4 @@ Dans la visualisation \textit{Bipartite graph}, les \textit{regions} de deux \te
 
 \subsubsection{Force-directed layout}
 
-La visualisation \textit{Force-directed layout} représente les \textit{region pairs} sous forme de réseaux.
+La visualisation \textit{Force-directed layout} représente les \textit{region pairs} sous forme de réseaux. Lorsque nous cliquons sur un nœud, seuls les liens connectant celui-ci à d'autres restent visibles. Un panneau avec des informations sur ce dernier s'affiche sur le côté pour donner davantage d'informations comme son nom, la cote de son \textit{witness}, le numéro de la page et le nombre de liens. \\
