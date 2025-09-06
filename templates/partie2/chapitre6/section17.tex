@@ -1,3 +1,5 @@
+A présent, nous allons détailler les \textit{workflows} des deux preuves de concept que nous avons conçu en évoquant les difficultés rencontrées.
+
 
 \subsection{Bipartite graph}
 
@@ -8,34 +10,34 @@
 	\label{fig:workflow_bipartite}
 \end{figure}
 
-Pour la visualisation \textit{Bipartite graph}, nous avons utilisé la bibliothèque JavaScript \textit{D3.js}. 
+Pour la visualisation \textit{Bipartite graph}\footnote{La visualisation \textit{bipartite graph} est disponible sur Github sur le repository suivant : \url{https://github.com/Cateatspython/bipartite_graph}.}, nous avons utilisé la bibliothèque JavaScript D3.js. 
 
 Étant donné qu'il s'agit d'une preuve de concept, nous avons intégré le \gls{css} et le JavaScript directement au sein d'un fichier \gls{html}.
 
-Premier point à ne pas négliger : il est nécessaire d'importer la bibliothèque JavaScript \textit{D3.js} dans une balise <script> dans le <head> du fichier HTML. 
+Premier point à ne pas négliger : il est nécessaire d'importer la bibliothèque JavaScript D3.js dans une balise <script> dans le <head> du fichier \gls{html}. 
 
 Ensuite, nous avons pu créer un \gls{css} très simple dans lequel nous avons spécifié  des informations telles que les dimensions du conteneur principal, la largeur du \gls{svg}, la taille des rectangles contenant les nœuds, la couleur des liens, le style d'écriture et la taille de la police des différents textes présents dans la visualisation ainsi que l'aspect du bouton \og Afficher plus \fg. 
 
-Dans la partie \gls{html} du <body>, nous avons ajouté un titre dans une balise <h2> et une \textit{checkbox} à cocher pour afficher le score de similarité. L'élément le plus important est la balise <svg> qui permet d'insérer une zone dans laquelle \textit{D3.js} dessine la visualisation avec les nœuds et les liens. Pour finir, nous joignions un bouton \og Ajouter plus \fg afin de gérer le flux d'images et d'éviter un arrêt brutal du système.
+Dans la partie \gls{html} du <body>, nous avons ajouté un titre dans une balise <h2> et une \textit{checkbox} à cocher pour afficher le score de similarité. L'élément le plus important est la balise <svg> qui permet d'insérer une zone dans laquelle D3.js va dessiner la visualisation avec les nœuds et les liens. Pour finir, nous joignions un bouton \og Ajouter plus \fg afin de gérer le flux d'images et d'éviter un arrêt brutal du système.
 
-Pour charger et parser le fichier \gls{csv} que nous voulions traiter avec la bibliothèque \textit{D3.js}, nous avons utilisé la fonction \textit{d3.csv()} couplée avec la méthode \textit{.then()} pour exécuter le reste du script uniquement quand le chargement est terminé.
+Pour charger et parser le fichier \gls{csv} que nous voulions traiter avec la bibliothèque D3.js, nous avons utilisé la fonction \textit{d3.csv()} couplée avec la méthode \textit{.then()} pour exécuter le reste du script uniquement quand le chargement est terminé.
 
-La fonction \textit{render()} permet de dessiner les nœuds et les liens au sein du \gls{svg}. Nous commençons à ajouter un <g> dans le \gls{svg} pour regrouper les éléments suivants : un rectangle qui sert de fond au nœud, une image d'une \textit{region} au sein de ce dernier et un texte sous le nœud pour l'identifier.
+La fonction \textit{render()} permet de dessiner les nœuds et les liens au sein du \gls{svg}. Nous commençons à ajouter un <g> dans le \gls{svg} pour regrouper les éléments suivants : un rectangle qui sert de fond au nœud, l'image d'une \textit{region} au sein de ce dernier et un texte sous le nœud pour l'identifier.
 
-Nous avons également ajouté des fonctionnalités pour rendre la visualisation interactive. Une \textit{checkbox} a été créée pour afficher le score de similarité au dessus des liens lorsqu'elle est cochée. Pour gérer la masse de nœuds et de liens, nous avons mis un bouton \og Afficher plus \fg qui permet d'afficher cinquante \textit{regions} supplémentaires à chaque fois que nous cliquons dessus. Pour révéler les similarités d'une \textit{region}, il suffit de cliquer dessus : les liens qui sont peu opaques se colorent en rouge vif et toutes les rectangles des \textit{regions} similaires aussi. Auparavant, nous avions envisagé de remplacer le clic par un survol mais les similarités ne s'affichaient pas systématiquement et cela altérait la qualité de la visualisation.
+Nous avons également ajouté des fonctionnalités pour rendre la visualisation interactive. Une \textit{checkbox} a été créée pour afficher le score de similarité au dessus des liens lorsqu'elle est cochée. Pour gérer la masse de nœuds et de liens, nous avons mis un bouton \og Afficher plus \fg qui permet d'afficher cinquante \textit{regions} supplémentaires à chaque fois que nous cliquons dessus. Pour révéler les similarités d'une \textit{region}, il suffit de cliquer dessus : les liens qui sont peu opaques se colorent en rouge vif et tous les rectangles des \textit{regions} similaires aussi. Auparavant, nous avions envisagé de remplacer le clic par un survol mais les similarités ne s'affichaient pas systématiquement et cela altérait la qualité de la visualisation.
 
 Voici un aperçu de l'arborescence du répertoire contenant la visualisation : 
 
-\begin{verbatim}
-	bipartite_graph/
-	├─ csv_files/
-	│  ├─ wit75.csv
-	│  └─ wit76.csv
-	├─ regions/
-	└─ bipartite_graph.html
-\end{verbatim}
+\dirtree{%
+	.1 bipartite\_graph/.
+	.2 csv\_files/.
+	.3 wit75.csv.
+	.3 wit76.csv.
+	.2 regions/.
+	.2 bipartite\_graph.html.
+}
 
-Nous ne pouvons pas visualiser les deux fichiers \gls{csv} en même temps. Il faut modifier la valeur de la variable \texttt{const file = "csv\_files/wit76.csv"} avec le fichier voulu.
+Nous ne pouvons pas visualiser les deux fichiers \gls{csv} en même temps. Dans le fichier \gls{html}, il faut modifier la valeur de la variable \texttt{const file = "csv\_files/wit76.csv"} avec le fichier voulu.
 
 Enfin, pour visualiser le rendu final de la visualisation, nous pouvons la lancer sur un serveur local, par exemple via \textit{Live Server}. 
 
@@ -48,19 +50,19 @@ Enfin, pour visualiser le rendu final de la visualisation, nous pouvons la lance
 	\label{fig:workflow_force_directed_layout}
 \end{figure}
 
-Pour la visualisation \textit{Force-directed layout} nous allons utiliser le logiciel d'analyse et de visualisation de réseaux \textit{Gephi}.
+Pour la visualisation \textit{Force-directed layout} nous allons utiliser le logiciel d'analyse et de visualisation de réseaux Gephi.
 
-Le principal problème rencontré concernait l'intégration des images dans les \textit{nodes}. Nous avons d'abord essayé de créer la visualisation sur \textit{Gephi} puis d'exporter le graphe avec le plugin \textit{Sigma Exporter}\footcite{alvarezSigmaExporter2023} qui permet de générer un répertoire \textit{network} contenant tous les fichiers nécessaires pour visualiser le graphe en format \textit{Sigma.js}. Cette méthode offre la possibilité de personnaliser la visualisation directement en modifiant le code. Toutefois, cette tâche nécessite de solides compétences en développement web que nous n'avons pas eu le temps d'acquérir durant le stage. Nous avons donc fait le choix de réaliser la visualisation entièrement sur \textit{Gephi} mais nous nous sommes heurté à nouveau au problème de l'intégration des images dans les \textit{nodes}. En faisant des recherches, nous avons pris connaissance de l'existence du plugin \textit{Image Preview}. Cependant, ce dernier ne fonctionne plus avec la dernière version de \textit{Gephi} (0.10.1). Nous avons donc télécharger la version 0.9.1 pour l'utiliser.
+Le principal problème rencontré concernait l'intégration des images dans les \textit{nodes}. Nous avons d'abord essayé de créer la visualisation sur Gephi puis d'exporter le graphe avec le plugin Sigma Exporter\footcite{alvarezSigmaExporter2023} qui permet de générer un répertoire \textit{network} contenant tous les fichiers nécessaires pour visualiser le graphe en format Sigma.js. Cette méthode offre la possibilité de personnaliser la visualisation directement en modifiant le code. Toutefois, cette tâche nécessite de solides compétences en développement web que nous n'avons pas eu le temps d'acquérir durant le stage. Nous avons donc fait le choix de réaliser la visualisation entièrement sur Gephi mais nous nous sommes heurtés à nouveau au problème de l'intégration des images dans les \textit{nodes}. En faisant des recherches, nous avons pris connaissance de l'existence du plugin Image Preview\footcite{xueGephiImagePreview2015}. Cependant, ce dernier ne fonctionne plus avec la dernière version de Gephi (0.10.1). Nous avons donc télécharger la version 0.9.1 pour l'utiliser.
 
-Pour commencer, nous importons les deux feuilles de calcul \textit{nodes\_gephi.csv} et \textit{edges\_gephi.csv} dans le même espace de travail en choisissant un type de graphe non dirigé. Ensuite, pour la spatialisation nous utilisons l'algorithme \textit{Force Atlas} en augmentant la force de répulsion à 2000 et en appliquant l'algorithme \textit{Déchevauchement} pour améliorer la visibilité des \textit{nodes} et des \textit{edges.}
+Pour commencer, nous importons les deux feuilles de calcul \textit{nodes\_gephi.csv} et \textit{edges\_gephi.csv} dans le même espace de travail en choisissant un type de graphe non dirigé. Ensuite, pour la spatialisation nous utilisons l'algorithme \textit{Force Atlas} en augmentant la force de répulsion à 2000 et en appliquant l'algorithme \textit{Déchevauchement} pour améliorer la visibilité des \textit{nodes} et des \textit{edges}.
 
-Pour continuer, nous calculons le degré des \textit{nodes} qui correspondant au nombre de \textit{edges} qui relient un nœud à d'autres. 
+Pour continuer, nous calculons le degré des \textit{nodes} qui correspond au nombre de \textit{edges} qui relient un nœud à d'autres. 
 
-Ensuite, nous allons personnaliser l'aspect des \textit{nodes} et des \textit{edges} via la fenêtre \textit{Aspect}. Pour la couleur, il faut aller dans \textit{Partition} dans la section \textit{Nœuds} et choisir \og cote \fg. Ainsi, les \textit{nodes} prendront une couleur différentes en fonction de leur \textit{witness}. Cela permet de comparer les liens entre les \textit{regions} des deux témoins. En ce qui concerne la taille, il faut choisir \og Degré \fg dans \textit{Classement}. Ainsi, la taille des \textit{nodes} dépendra de leur nombre de liens. Pour finir, il ne reste plus qu'à ajouter les images placées au préalable dans un dossier \og \textit{regions} \fg via la fenêtre \textit{Prévisualisation}.
+Ensuite, nous allons personnaliser l'aspect des \textit{nodes} et des \textit{edges} via la fenêtre \og Aspect \fg. Pour la couleur, il faut aller dans \og Partition \fg dans la section \og Nœuds \fg et choisir \og cote \fg. Ainsi, les \textit{nodes} prendront une couleur différente en fonction de leur \textit{witness}. Cela permet de comparer les liens entre les \textit{regions} des deux témoins. En ce qui concerne la taille, il faut choisir \og Degré \fg dans \og Classement \fg. Ainsi, la taille des \textit{nodes} dépendra de leur nombre de liens. Pour finir, il ne reste plus qu'à ajouter les images placées au préalable dans un dossier \og \textit{regions} \fg via la fenêtre \og Prévisualisation \fg.
 
-A présent, nous pouvons exporter notre graphe en format \gls{gexf}. Nous avons procédé à un dernier nettoyage à l'aide d'un script Python avant son intégration dans \textit{Gephi Lite}, la version allégée de \textit{Gephi} disponible en ligne. L'avantage de cette plateforme est qu'elle permet d'intégrer facilement des images à la visualisation. Il faut procéder à la modification des chemins des images. En effet, dans le fichier \gls{gexf} actuel, ils renvoient aux images présentes dans le dossier \textit{regions}. Sur \textit{Gephi Lite}, il n'est pas possible d'intégrer des images enregistrées en local. Il est donc nécessaire de remplacer le chemin par l'\gls{url} des images en format \gls{iiif} de la base de données \gls{eida}.
+A présent, nous pouvons exporter notre graphe en format \gls{gexf}. Nous avons procédé à un dernier nettoyage à l'aide d'un script Python avant son intégration dans Gephi Lite, la version allégée de Gephi disponible en ligne. L'avantage de cette plateforme est qu'elle permet d'intégrer facilement des images à la visualisation. Il faut procéder à la modification des chemins des images. En effet, dans le fichier \gls{gexf} actuel, ils renvoient aux images présentes dans le dossier \textit{regions}. Sur Gephi Lite, il n'est pas possible d'intégrer des images enregistrées en local. Il est donc nécessaire de remplacer le chemin par l'\gls{url} des images en format \gls{iiif} de la base de données \gls{eida}.
 
-Maintenant, il faut importer le fichier \gls{gexf} dans \textit{Gephi Lite}. Il ne reste plus qu'à indiquer qu'il faut définir les images à partir de l'attribut \textit{image} dans le fichier \gls{gexf} pour renvoyer aux \textit{regions} en format \gls{iiif}. Il faut également réduire la police d'écriture des \textit{labels} des nœuds.
+Maintenant, il faut importer le fichier \gls{gexf} dans Gephi Lite. Il ne reste plus qu'à indiquer qu'il est nécessaire de définir les images à partir de l'attribut \textit{image} dans le fichier \gls{gexf} pour renvoyer aux \textit{regions} en format \gls{iiif}. Il faut également réduire la police d'écriture des \textit{labels} des nœuds pour améliorer la lisibilité de la visualisation.
 
 \begin{figure}[H]
 	\centering
@@ -68,3 +70,5 @@ Maintenant, il faut importer le fichier \gls{gexf} dans \textit{Gephi Lite}. Il 
 	\caption{Aperçu de la première tentative de visualisation sur \textit{Gephi Lite}}
 	\label{fig:gephi-lite-1}
 \end{figure}
+
+Après avoir détaillé la réalisation des preuves de concept, nous les avons présentées aux chercheurs de l'équipe \gls{eida}. Leurs retours nous ont permis d'identifier des points à améliorer et d'ajuster les visualisations.

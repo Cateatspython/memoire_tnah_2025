@@ -8,6 +8,7 @@
 \usepackage{minted} % colored source code
 \usepackage{csquotes}
 \usepackage{pdfpages}
+\usepackage{dirtree}
 
 
 % Mise en page École des chartes
@@ -248,6 +249,7 @@
 	
 	\chapter{Processus itératif de développement}
 	
+	Dans ce chapitre, nous allons détailler les étapes successives de la conception des deux preuves de concept. Nous commencerons par le traitement des données en présentant les critères de sélection, de nettoyage et de restructuration. Ensuite, nous passerons à la mise en œuvre concrète en parlant des choix techniques et des difficultés rencontrées. Pour finir, nous aborderons l'intégration des retours des chercheurs qui a permis de corriger et d'ajuster les visualisations afin qu'elles répondent au mieux aux besoins identifiés.
 	
 	\section{Traitement des données}
 	\input{templates/partie2/chapitre6/section16}
@@ -261,6 +263,11 @@
 	
 	\section{Intégration des retours utilisateurs et ajustements}
 	\input{templates/partie2/chapitre6/section18}
+	
+	
+	Après avoir traité les données pour les rendre exploitables, nous avons pu mettre en place deux preuves de concept. Pour le \textit{bipartite graph}, nous avons utilisé le logiciel Gephi puis sa version en ligne Gephi Lite tandis que pour le \textit{force-directed layout} nous avons créé un fichier \gls{html} avec du \gls{css} et du JavaScript avec la bibliothèque D3.js. Suite aux retours des chercheurs, nous avons corrigé quelques détails.\\
+	
+	Dans cette deuxième partie du mémoire, nous avons rappelé les fondements théoriques et méthodologiques en retraçant l'histoire de la visualisation, en présentant les différents types puis en mettant l'accent sur la visualisation en réseaux. Ensuite, nous sommes passés par l'étape de la formalisation des besoins et des contraintes de conception en analysant les attentes des chercheurs, en effectuant un \textit{benchmark} et en rédigeant un cahier des charges. Pour finir, nous avons réalisé les preuves de concept puis nous les avons ajusté suite aux retours des chercheurs. Afin de prendre du recul sur notre démarche, il convient à présent de proposer une évaluation critique et d'envisager les perspectives d'avenir.
 	
 	
 	
