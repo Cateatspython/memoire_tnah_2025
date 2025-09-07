@@ -5,7 +5,10 @@ Les visualisations produites dans le cadre de notre projet sont réalisées à p
 
 Dans la visualisation en \textit{bipartite graph}, nous avons ajouté une fonctionnalité pour afficher le score de similarité au dessus des liens des différentes \textit{regions}. Toutefois, ce dernier demeure ambivalent.
 
-Comme nous l'avons vu précédemment, ce score est calculé avec une similarité de cosinus. En théorie, plus cette dernière est élevée, plus les deux \textit{regions} sont similaires. Cependant, il arrive que ce dernier ne soit pas fiable car il ne tient pas compte de la structure spatiale de l'image. Si cette dernière est un peu tournée ou déformée, le score de similarité chute même si les deux \textit{regions} sont similaires. Parfois, nous rencontrons également le problème inverse : l'algorithme repère deux images dont les traits sont semblables mais qui sont en réalité différentes dans leur signification.
+Comme nous l'avons vu précédemment, ce score est calculé avec une similarité de cosinus. En théorie, plus ce dernier est élevé, plus les deux \textit{regions} sont similaires. Cependant, ce score peut manquer de fiabilité car il ne prend pas en compte la structure spatiale de l'image.
+
+
+Si cette dernière est un peu tournée ou déformée, le score de similarité chute même si les deux \textit{regions} sont similaires. Parfois, nous rencontrons également le problème inverse : l'algorithme repère deux images dont les traits sont semblables mais qui sont en réalité différentes dans leur signification.
 
 Pour le premier cas, nous pouvons prendre comme exemple deux \textit{regions} extraites du projet \gls{vhs}. 
 
@@ -49,10 +52,10 @@ Pour la visualisation \textit{force-directed layout}, un autre problème lié au
 	\label{fig:traitement}
 \end{figure}
 
-Dans cet exemple, on observe que de nombreuses \textit{regions} ne sont pas réellement similaires mais elle apparaissent quand même parmi les résultats du traitement automatique.
+Dans cet exemple, on observe que de nombreuses \textit{regions} ne sont pas réellement similaires mais elles apparaissent quand même parmi les résultats du traitement automatique.
 
-La présence de \textit{regions} peu similaires contribue à créer une importante masse de données. Comme nous l'avons vu précédemment, cette abondance de similarités peu pertinentes nuit à la lisibilité de la visualisation.
+La présence de \textit{regions} peu similaires contribue à créer une importante masse de données. Comme nous l'avons vu précédemment, cette abondance de \textit{regions pairs} peu pertinentes nuit à la lisibilité de la visualisation.
 
 \subsection{Les règles d'annotation}
 
-Enfin, l'un des principaux problèmes liés aux données réside dans l'annotation des chercheurs qui peut se révéler subjective dans certains cas. Lorsque la similarité entre deux \textit{regions} est évidente, il n'y a aucune difficulté : il s'agit d'un \textit{exact match}. En revanche, certains cas posent davantage de difficulté. Les chercheurs ne se limitent pas à la ressemblance visuelle lorsqu'ils annotent les résultats. Ils sont capables d'identifier deux \textit{regions} qui, bien que n'étant pas totalement similaires, représentent la même notion. Cependant, des divergences d'interprétation peuvent avoir lieu, notamment avec les \textit{partial match} et \textit{semantic match}, et parfois même pour les \textit{exact match}. C'est pour cette raison que des guides d'annotation sont créés afin d'aider les chercheurs à identifier clairement ce qu'est un \textit{exact match}, un \textit{partial match} ou un \textit{semantic match}. Pour l'instant, même si l'annotation des similarités a commencé, aucun guide n'existe pour le projet \gls{eida}. Cependant, sa création est en cours de réflexion.
+Enfin, l'un des principaux problèmes liés aux données réside dans l'annotation des chercheurs qui peut se révéler subjective dans certains cas. Lorsque la similarité entre deux \textit{regions} est évidente, il n'y a aucune difficulté : il s'agit d'un \textit{exact match}. En revanche, certains cas posent davantage de difficulté. Les chercheurs ne se limitent pas à la ressemblance visuelle lorsqu'ils annotent les résultats. Ils sont capables d'identifier deux \textit{regions} qui, bien que n'étant pas totalement similaires, représentent la même notion. Cependant, des divergences d'interprétation peuvent avoir lieu, notamment avec les \textit{partial match} et \textit{semantic match}, et parfois même pour les \textit{exact match}. C'est pour cette raison que des guides d'annotation sont créés afin d'aider les chercheurs à identifier clairement ce qu'est un \textit{exact match}, un \textit{partial match} ou un \textit{semantic match}. Pour l'instant, même si l'annotation des similarités a commencé, aucun guide n'existe pour le projet \gls{eida}. Cependant, sa création est en cours de réflexion.\\

@@ -1,14 +1,14 @@
 \documentclass[a4paper,12pt,twoside]{book}
-\usepackage[T1]{fontenc}
-\usepackage{inputenc}
-\usepackage{fontspec}
-\usepackage{lmodern}
-\usepackage[english,french]{babel}
+\usepackage[T1]{fontenc} % pour l'encodage de la police en format enc
+\usepackage{inputenc} % pour les caractères
+\usepackage{fontspec} % fournit une interface automatique et unifiée pour les polices
+\usepackage{lmodern} % charge la famille de polices Latin Modern
+\usepackage[english,french]{babel} % gestion des langues et de la typographie
 \usepackage{xspace} % pour la gestion des espaces après les commandes
 \usepackage{minted} % colored source code
-\usepackage{csquotes}
-\usepackage{pdfpages}
-\usepackage{dirtree}
+\usepackage{csquotes} % gestion des guillemets et citations
+\usepackage{pdfpages} % pour insérer des pages entières d'un fichier pdf externe
+\usepackage{dirtree} % pour dessiner des arborescences de répertoires ou de fichiers
 
 
 % Mise en page École des chartes
@@ -17,8 +17,8 @@
 \onehalfspacing % interligne de 1.5
 \setlength\parindent{1cm}
 
-\usepackage{tocbibind}
-\usepackage[backend=biber, sorting=nyt, style=enc, minbibnames=10, maxbibnames=10]{biblatex}
+\usepackage{tocbibind} % pour organiser les tables et les listes
+\usepackage[backend=biber, sorting=nyt, style=enc, minbibnames=10, maxbibnames=10]{biblatex} % pour gérer les bibliographies et les citations 
 \addbibresource{bibliographie/histoiresciences.bib}
 \addbibresource{bibliographie/computervision.bib}
 \addbibresource{bibliographie/visualisations.bib}
@@ -29,18 +29,18 @@
 
 \usepackage[pdfusetitle, pdfsubject={Mémoire TNAH — Titre}, pdfkeywords={mot1, mot2, mot3}]{hyperref}
 
-\usepackage{graphicx}
-\usepackage{subcaption}
+\usepackage{graphicx} % pour insérer et manipuler des images
+\usepackage{subcaption} % pour gérer plusieurs images à l'intérieur d'une seule figure
 
 \author{Prénom Nom – M2 TNAH — ENC}
 \title{Titre mémoire}
 
 % ACRONYMS
-\usepackage[automake, acronym, toc]{glossaries}
+\usepackage[automake, acronym, toc]{glossaries} % pour créer des glossaires ou listes d'acronymes
 \makeglossaries
 \setacronymstyle{short-long}
 \newacronym{fair}{\textsc{fair}}{\emph{Findable Accessible Interoperable Reusable}}
-\newacronym{api}{\textsc{api}}{\emph{Application Programming Interface}}
+\newacronym{api}{\textsc{API}}{\emph{Application Programming Interface}}
 \newacronym{eida}{EIDA}{Editing and analysing hIstorical astronomical Diagrams with Artificial intelligence}
 \newacronym{htr}{HTR}{Handwritten Text Recognition}
 \newacronym{ocr}{OCR}{Optical Character Recognition}
@@ -58,7 +58,6 @@
 \newacronym{xml}{XML}{Extensible Markup Language}
 \newacronym{bert}{BERT}{Bidirectional Encoder Representations from Transformers}
 \newacronym{eycon}{EYCON}{Early conflit photograph 1890-1918 and visual AI}
-\newacronym{aikon}{AIKON}{A computer vision platform for historians}
 \newacronym{yolo}{YOLO}{You Only Look Once}
 \newacronym{anr}{ANR}{Agence nationale de la recherche}
 \newacronym{gexf}{GEXF}{Graph Exchange XML Format}
@@ -78,11 +77,13 @@
 \newcommand{\enc}{École nationale des chartes\xspace}
 \newcommand{\fair}{\gls{fair}\xspace}
 \newcommand{\api}{\gls{api}\xspace}
+\newcommand{\VIII}{\textsc{viii}\ieme{}\xspace}
 \newcommand{\IX}{\textsc{ix}\ieme{}\xspace}
 \newcommand{\XII}{\textsc{xii}\ieme{}\xspace}
 \newcommand{\XIII}{\textsc{xiii}\ieme{}\xspace}
 \newcommand{\XIV}{\textsc{xiv}\ieme{}\xspace}
 \newcommand{\XVI}{\textsc{xvi}\ieme{}\xspace}
+\newcommand{\XVIII}{\textsc{xviii}\ieme{}\xspace}
 \newcommand{\XX}{\textsc{xx}\ieme{}\xspace}
 \newcommand{\XIX}{\textsc{xix}\ieme{}\xspace}
 % Pour retirer le titre courant d'une page vide avant un chapitre
@@ -112,6 +113,13 @@
 	
 	\chapterNo{Remerciements}
 	\addcontentsline{toc}{chapter}{Remerciements}
+	Je tiens à exprimer ma profonde gratitude à toutes les personnes qui ont contribué à la réalisation de ce mémoire.
+	Je remercie chaleureusement mon tuteur de stage, Somkeo Norindr, pour ses conseils avisés, sa disponibilité et son soutien constant tout au long de ce travail. Je remercie également Matthieu Husson et l'ensemble de l'équipe d'Histoire des sciences de l'Observatoire de Paris pour leur accueil chaleureux et pour leur accompagnement dans l'étude des diagrammes astronomiques. Je remercie ma directrice de recherche, Ségolène Albouy, pour son encadrement et ses précieux conseils.\\
+	
+	Je remercie ma famille et mes amis pour leur soutien constant, leur patience et leurs encouragements tout au long de la réalisation de ce mémoire.  
+	
+	
+	
 	
 	\part*{Bibliographie}
 	
@@ -132,17 +140,17 @@
 	
 	Parmi ces formes, les visualisations en réseaux attirent particulièrement notre attention. Ce type de représentation utilise des nœuds et des liens pour analyser les relations entre différentes entités. Elles sont réalisées à l'aide de logiciels de création et d'analyse de réseaux comme Pajek ou Gephi. La disposition des nœuds et des liens est déterminée par des algorithmes par modèle de force comme Force Atlas. Ces visualisations peuvent être organisées selon plusieurs niveaux et il est possible de les étudier dans leur ensemble ou de se concentrer sur une partie en particulier. Elles sont utilisées dans le domaine des sciences humaines et sociales pour visualiser les données et les concepts \footcite{cristofoliPrincipesUsagesDessins2015}. De plus, les visualisations en réseaux offrent la possibilité d'intégrer des images dans leurs nœuds afin d'établir des liens entre différents éléments iconographiques. Cela permet de les employer dans des projets en histoire et en histoire de l'art centrés sur l'étude des images.\\
 	
-	\gls{eida} fait partie de ces projets qui se concentrent sur l'étude des images. Il est en collaboration entre le laboratoire \gls{lte} de l'Observatoire de Paris et l'équipe de recherche IMAGINE de l'Ecole nationale des ponts et chaussées. Les chercheurs de ce projet travaillent sur l'édition critique des diagrammes astronomiques de tradition ptoléméenne grâce à l'utilisation d'outils de vision artificielle. Ils utilisent l'application AIKON qui permet de traiter automatiquement des sources iconographiques via l'extraction de \textit{regions} et la reconnaissance de similarité. Le but de cette dernière est de retracer la diffusion et la transmission des savoirs dans le temps et dans l'espace par le biais des diagrammes astronomiques. L'une des prochaines étapes du projet est la création de visualisations conçues pour être intégrées dans AIKON afin d'analyser les résultats obtenus.\\
+	\gls{eida} fait partie de ces projets qui se concentrent sur l'étude des images. Il est en collaboration entre le laboratoire \gls{lte} de l'Observatoire de Paris et l'équipe de recherche IMAGINE de l'Ecole nationale des ponts et chaussées. Les chercheurs de ce projet travaillent sur l'édition critique des diagrammes astronomiques de tradition ptoléméenne grâce à l'utilisation d'outils de vision artificielle. Ils utilisent l'application AIKON qui permet de traiter automatiquement des sources iconographiques via l'extraction de \textit{regions} et la reconnaissance de similarités. Le but de cette dernière est de retracer la diffusion et la transmission des savoirs dans le temps et dans l'espace par le biais des diagrammes astronomiques. L'une des prochaines étapes du projet est la création de visualisations conçues pour être intégrées dans AIKON afin d'analyser les résultats obtenus.\\
 
-	C'est pour participer à la réalisation de cette mission que s'est déroulé un stage de quatre mois, entre avril et août 2025, à l'Observatoire de Paris au sein de l'équipe \gls{eida}. La mission principale était de concevoir des preuves de concept pour des visualisations à partir des données des projets \gls{eida} et \gls{vhs}, un autre projet utilisant AIKON. Ces dernières ont pour but de tester la faisabilité et la pertinence des visualisations à intégrer au sein de cette application. Avant de les développer, un cahier des charges et un benchmark des solutions techniques envisageables ont été rédigés. Ces livrables ont permis de définir des objectifs clairs ainsi que les limites du projet. Afin de bien comprendre le fonctionnement de l’application AIKON et l’expérience utilisateur qu’elle procure, une documentation pour les différentes fonctionnalités de l’interface utilisateur a été rédigée. Pour clore ce stage, un DH Seminar a été organisé pour partager aux chercheurs les réflexions, les différentes étapes de réalisation des visualisations et les résultats obtenus. Suite à ce dernier, des ajustements ont été effectués sur les preuves de concept. Plus largement, ce travail a permis de mener une réflexion approfondie autour du concept de visualisation de données en sciences humaines et sociales qui sera présentée dans ce mémoire.\\
+	C'est pour participer à la réalisation de cette mission que s'est déroulé un stage de quatre mois, entre avril et août 2025, à l'Observatoire de Paris au sein de l'équipe \gls{eida}. La mission principale était de concevoir des preuves de concept pour des visualisations à partir des données des projets \gls{eida} et \gls{vhs}, un autre projet utilisant AIKON. Ces dernières ont pour but de tester la faisabilité et la pertinence des visualisations à intégrer au sein de cette application. Avant de les développer, un cahier des charges et un \textit{benchmark} des solutions techniques envisageables ont été rédigés. Ces livrables ont permis de définir des objectifs clairs ainsi que les limites du projet. Afin de bien comprendre le fonctionnement de l’application AIKON et l’expérience utilisateur qu’elle procure, une documentation pour les différentes fonctionnalités de l’interface utilisateur a été rédigée. Pour clore ce stage, un DH Seminar a été organisé pour partager aux chercheurs les réflexions, les différentes étapes de réalisation des visualisations et les résultats obtenus. Suite à ce dernier, des ajustements ont été effectués sur les preuves de concept. Plus largement, ce travail a permis de mener une réflexion approfondie autour du concept de visualisation de données en sciences humaines et sociales qui sera présentée dans ce mémoire.\\
 	
-	Comment la visualisation de données peut-elle révéler les trajectoires de circulations d'idées à travers les cultures et le temps ? Quels types de visualisations et quelles techniques sont les plus appropriés pour représenter les résultats issus du traitement automatique de données ? Quelles sont les limites et contraintes liées à la visualisation de ce type de données ?\\
+	Comment la visualisation de données peut-elle révéler les trajectoires de la circulation d'idées à travers les cultures et le temps ? Quels types de visualisations et quelles techniques sont les plus appropriés pour représenter les résultats issus du traitement automatique de données ? Quelles sont les limites et contraintes liées à la visualisation de ce type de données ?\\
 	
 	Dans une première partie, nous aborderons les enjeux scientifiques et techniques de l'analyse automatisée des transmissions iconographiques. Nous expliquerons en quoi les diagrammes astronomiques de tradition ptoléméenne constituent un corpus pertinent pour étudier la transmission et la diffusion des savoirs. Nous présenterons les fonctionnalités de l'application AIKON permettant de générer des résultats à intégrer dans les visualisations. Nous exposerons pourquoi il est nécessaire de créer des interfaces de visualisation. Nous analyserons également des projets similaires à \gls{eida} qui en sont déjà équipés. 
 	
-	Dans une deuxième partie, nous parlerons de la méthodologie à suivre pour concevoir des visualisations exploratoires. Tout d'abord, nous ferons un rapide rappel de l'histoire et des enjeux pour visualiser les données. Nous présenterons plus en détail la visualisation sous forme de réseaux. Ensuite, nous définirons les besoins et les contraintes pour la réalisation des preuves de concept en rédigeant des livrables techniques comme le \textit{benchmark} et le cahier des charges. Pour finir, nous détaillerons le processus itératif de développement avec le nettoyage des données, la création des preuves de concept et les ajustements opérés suite aux échanges avec les chercheurs. 
+	Dans une deuxième partie, nous parlerons de la méthodologie à suivre pour concevoir des visualisations exploratoires. Tout d'abord, nous ferons un rapide rappel de l'histoire et des enjeux de la visualisation de données. Nous présenterons plus en détail la visualisation sous forme de réseaux. Ensuite, nous définirons les besoins et les contraintes pour la réalisation des preuves de concept en rédigeant des livrables techniques comme le \textit{benchmark} et le cahier des charges. Pour finir, nous détaillerons le processus itératif de développement avec le nettoyage des données, la création des preuves de concept et les ajustements opérés suite aux échanges avec les chercheurs. 
 	
-	Dans une troisième partie, nous procéderons à une évaluation critique des preuves de concept et nous discuterons de leurs perspectives d'avenir. Nous mènerons d'abord une analyse approfondie des visualisations. Ensuite, nous évoquerons la validation et les limites méthodologiques. Nous parlerons également de l'intégration des futures visualisations issues des preuves de concept dans l'application AIKON ainsi que les pistes de travail qui mériteraient d'être approfondies. Nous réfléchirons aussi aux autres corpus auxquels ces visualisations pourraient être appliquées. Pour finir, nous inscrirons notre projet de visualisations dans le contexte des humanités numériques actuelles.
+	Dans une troisième partie, nous procéderons à une évaluation critique des preuves de concept et nous discuterons de leurs perspectives d'avenir. Nous mènerons d'abord une analyse approfondie des visualisations. Ensuite, nous évoquerons la validation et les limites méthodologiques. Nous parlerons également de l'intégration des futures visualisations issues des preuves de concept dans l'application AIKON ainsi que des pistes de travail qui mériteraient d'être approfondies. Nous réfléchirons aussi aux autres corpus auxquels ces visualisations pourraient être appliquées. Pour finir, nous inscrirons notre projet de visualisations dans le contexte des humanités numériques actuel.
 	
 	
 	\thispagestyle{empty}
@@ -289,6 +297,9 @@
 	
 	\part{Evaluation critique et perspectives d'intégration}
 	\chapter{Analyse des visualisations produites}
+	
+	Dans ce chapitre, nous allons analyser les preuves de concept que nous avons développé. Une documentation pour les développeurs\footnote{Cette documentation est disponible sur le Github du mémoire dans les livrables techniques : \url{https://github.com/Cateatspython/memoire_tnah_2025/tree/main/livrables}} a été rédigée afin d'expliquer d'un point de vue plus technique la construction des visualisations.
+	
 	\section{Visualisation bipartite : révéler les réorganisations du contenu intellectuel}
 	\input{templates/partie3/chapitre7/section19}
 	
@@ -297,16 +308,27 @@
 	
 	\clearemptydoublepage
 	
+	Nous venons d'analyser avec davantage de précision les preuves de concept que nous avons créé. Le \textit{bipartite graph} nous a permis de comparer la diffusion de figures géométriques d'un manuel de mathématiques à une encyclopédie. La visualisation \textit{force-directed layout} est utile pour observer les relations entre différents diagrammes dans deux traditions différentes de l'\almageste. 
+	
 	\chapter{Validation et limites méthodologiques}
+	
+	Après la phase de conception, il est nécessaire d'évaluer les preuves de concept. Dans ce chapitre, nous vérifierons leur pertinence par rapport aux objectifs scientifiques et nous évoquerons les contraintes liées aux données.
+	
 	\section{Adéquation aux objectifs d'exploration scientifique}
 	\input{templates/partie3/chapitre8/section21}
 	
 	\section{Limites liées aux données et biais d'interprétation}
 	\input{templates/partie3/chapitre8/section22}
 	
+	
+	Ce chapitre a permis de montrer la manière dont les preuves de concept des visualisations se situent par rapport aux objectifs scientifiques. Elles n'apportent pas d'aide directe à l'annotation mais se révèlent utiles pour l'exploration des données et la médiation scientifique. Nous avons également souligné les limites liées aux données et aux biais d'interprétation, notamment la fiabilité limitée du score de similarité, l'inexactitude du traitement automatique et l'annotation des chercheurs.
+	
 	\clearemptydoublepage
 	
 	\chapter{Perspectives d'évolution et généralisation}
+	
+	Ce chapitre propose d'explorer les perspectives d'évolution et de généralisation des preuves de concept de visualisation. Nous examinerons d'abord les possibilités d'intégration au sein de l'application, puis nous aborderons des pistes intéressantes qui n'ont pas été approfondies par manque de temps, notamment le design et l'accessibilité. Ensuite, nous envisagerons l'application de ces visualisations à d'autres corpus. Enfin, nous situerons le projet dans le champ des humanités numériques.
+	
 	\section{Intégration à la plateforme AIKON}
 	\input{templates/partie3/chapitre9/section23}
 	
@@ -316,24 +338,27 @@
 	\section[Positionnement dans les humanités numériques]{Positionnement du projet dans le domaine des humanités numériques}
 	\input{templates/partie3/chapitre9/section25}
 	
+	Ce chapitre a permis d'explorer les perspectives d'évolution et de généralisation des preuves de concept. Nous avons montré comment elles pourraient être intégrées à l'application AIKON et souligné des pistes non explorées, notamment le design et l'accessibilité. Ces visualisations peuvent également être appliquées à d'autres corpus comme la photographie de presse, la peinture ou les objets archéologiques. Enfin, ce travail s'inscrit dans le champ des humanités numériques en contribuant à l'exploration de données.
+	
 	\clearemptydoublepage
 	
 	\chapterNo{Conclusion}
 	\addcontentsline{toc}{chapter}{Conclusion}
+	\markboth{Conclusion}{Conclusion}
 	
-	Ce mémoire présente le travail réalisé dans le cadre d'un stage effectué au sein du projet \gls{eida} à l'Observatoire de Paris. La mission principale consistait en la réalisation de deux preuves de concept pour tester les différentes solutions et valider la faisabilité technique de visualisations à intégrer au sein de l'application AIKON. Pour la \textit{force-directed layout}, nous en avons conclu qu'il était compliqué d'utiliser des données non annotées car la présence d'un trop grand nombre de résultats non pertinents génère une masse de données importante. Cela nuit à la bonne lisibilité. Cependant, il est envisageable de la réaliser avec des données annotées au préalable. Il sera alors possible de visualiser plus de deux \textit{witnesses} à la fois car il y aura moins de nœuds. L'utilisation de la bibliothèque JavaScript pour développer la visualisation au sein de l'application AIKON est conseillée. La preuve de concept \textit{bipartite graph} sert à comparer les \textit{regions} similaires de deux \textit{witnesses}. La bibliothèque JavaScript D3.js pourra également être utilisée dans la version finale de la visualisation.
+	Ce mémoire présente le travail réalisé dans le cadre d'un stage effectué au sein du projet \gls{eida} à l'Observatoire de Paris. La mission principale consistait en la réalisation de deux preuves de concept pour tester les différentes solutions et valider la faisabilité technique de visualisations à intégrer au sein de l'application AIKON. Pour la \textit{force-directed layout}, nous en avons conclu qu'il était trop compliqué d'utiliser des données non annotées car la présence d'un grand nombre de résultats non pertinents génère une masse de données importante. Cela nuit à la bonne lisibilité. Cependant, il est envisageable de la réaliser avec des données annotées au préalable. Il sera alors possible de visualiser plus de deux \textit{witnesses} à la fois car il y aura moins de nœuds. L'utilisation de la bibliothèque JavaScript Sigma.js pour développer la visualisation au sein de l'application AIKON est conseillée. La preuve de concept \textit{bipartite graph} sert à comparer les \textit{regions} similaires de deux \textit{witnesses}. La bibliothèque JavaScript D3.js pourra également être utilisée dans la version finale de la visualisation.
 	
-	En ce qui concerne les missions secondaires, la rédaction du \textit{benchmark} et du cahier des charges nous a permis de choisir le type de visualisation à utiliser ainsi que de définir les besoins et les contraintes. L'élaboration du \textit{User's guide} destiné aux chercheurs nous a aidé à mieux comprendre le fonctionnement de l'application AIKON. La présentation des résultats du stage lors du DH Seminar nous a donné l'occasion de discuter avec les chercheurs des preuves de concept. Cela nous a permis de corriger certains détails. Nous avons également appris à adapter notre discours en fonction du public. En effet, les chercheurs n'ont pas forcément autant de connaissances en informatique que les ingénieurs et il est nécessaire de faire de la vulgarisation scientifique.
+	En ce qui concerne les missions secondaires, la rédaction du \textit{benchmark} et du cahier des charges nous a permis de choisir les types de visualisations à utiliser ainsi que de définir les besoins et les contraintes. L'élaboration du \textit{User's guide} destiné aux chercheurs nous a aidé à mieux comprendre le fonctionnement de l'application AIKON. La présentation des résultats du stage lors du DH Seminar nous a donné l'occasion de discuter avec les chercheurs des preuves de concept. Cela nous a permis de corriger certains détails. Nous avons également appris à adapter notre discours en fonction du public. En effet, les chercheurs n'ont pas forcément autant de connaissances en informatique que les ingénieurs et il est nécessaire de faire de la vulgarisation scientifique.
 	
-	Dans un premier temps, nous avons évoqué les enjeux scientifiques de la transmission d'objets iconographiques. Les diagrammes de tradition ptoléméenne sont un excellent exemple dans la mesure où l'\almageste a été copiée, traduite et commentée pendant plus de mille ans dans une large aire géographique. Les traitements automatiques de l'application AIKON génère une masse importante de données qu'il convient d'étudier. C'est pour cette raison que nous cherchons à réaliser des visualisations. Nous avons analysé des interfaces déjà existantes de projets similaires à \gls{eida}. Nous avons remarqué une prédominance de l'organisation en mosaïque et de la barre de recherche. Nous souhaitions proposer une approche différente pour nos preuves de concept. 
+	Dans un premier temps, nous avons évoqué les enjeux scientifiques de la transmission d'objets iconographiques. Les diagrammes de tradition ptoléméenne sont un excellent exemple dans la mesure où l'\almageste a été copiée, traduite et commentée pendant plus de mille ans dans une large aire géographique. Les traitements automatiques de l'application AIKON génèrent une masse importante de données qu'il convient d'étudier. C'est pour cette raison que nous cherchons à réaliser des visualisations. Nous avons analysé des interfaces déjà existantes de projets similaires à \gls{eida}. Nous avons remarqué une prédominance de l'organisation en mosaïque et de la barre de recherche. Nous souhaitions proposer une approche différente pour nos preuves de concept. 
 	
-	Dans un deuxième temps, nous nous sommes penchés sur la méthodologie à suivre pour concevoir des visualisations exploratoires. Nous avons rapidement évoqué un historique de la visualisation de données et les différents types. Nous nous sommes arrêté plus en détail sur les réseaux. Nous avons parlé des limites liées aux risques d'altération ou de suppression des données à cause de la visualisation. Ensuite, nous avons poursuivi en mentionnant la rédaction des livrables techniques qui définissent les besoins et les contraintes. Nous avons choisi d'utiliser Gephi pour la preuve de concept \textit{force-directed layout} et D3.js pour \textit{bipartite graph}. 
+	Dans un deuxième temps, nous nous sommes penchés sur la méthodologie à suivre pour concevoir des visualisations exploratoires. Nous avons rapidement évoqué un historique de la visualisation de données et les différents types. Nous nous sommes arrêtés plus en détail sur les réseaux. Nous avons parlé des limites liées aux risques d'altération ou de suppression des données à cause de la visualisation. Ensuite, nous avons poursuivi en mentionnant la rédaction des livrables techniques qui définissent les besoins et les contraintes. Nous avons choisi d'utiliser Gephi pour la preuve de concept \textit{force-directed layout} et D3.js pour le \textit{bipartite graph}. 
 	
-	Dans un troisième temps, nous avons abordé l'évaluation critique et les perspectives d'évolution des deux preuves de concept que nous avons conçu. Nous les avons d'abord analysé plus en détail. Puis, nous nous sommes penchés sur la validation et les limites méthodologiques. Nous avons mis de côté l'idée de créer des visualisations pour l'aide à l'annotation et la mise en contexte des \textit{regions} dans le corpus. En ce qui concerne la médiation scientifique, les chercheurs pourront les utiliser dans le cadre de la présentation de leurs recherches. Cependant, il est plus compliqué de les proposer pour le grand public car elles restent très techniques. Nous nous heurtons également à des limites liées aux données : le score de similarité n'est pas forcément très fiable, les résultats du traitement automatique non annotées sont difficilement exploitables et l'annotation des chercheurs peut se révéler subjective. Ensuite, nous avons parler de l'intégration à l'application des visualisations finales qui seront développées à partir de nos preuves de concept. Nous pourrons les intégrer soit à une nouvelle fenêtre, soit à un nouvel outil. Nous avons également évoqué les pistes que nous n'avons pas eu le temps d'explorer : le design et l'accessibilité. Pour finir, nous avons inscrit notre projet dans le champ des humanités numériques actuelle. Nous avons proposé une manière différente de représenter les similarités alors que les projets déjà existants favorisent encore la mosaïque et la barre de recherche. Cependant, nous avons constaté l'existence d'un projet similaire au nôtre qui souhaite visualiser les liens entre les tuiles des toits chinois anciens en fonction de leur motif au fil des époques. Ce dernier utilise également une visualisation sous la forme de réseaux mais il intègre en plus une frise chronologique pour mieux se repérer dans le temps. Nous pourrions ajouter cette amélioration à la visualisation \textit{force-directed layout} finale.
+	Dans un troisième temps, nous avons abordé l'évaluation critique et les perspectives d'évolution des deux preuves de concept que nous avons conçu. Nous les avons d'abord analysés plus en détail. Puis, nous nous sommes penchés sur la validation et les limites méthodologiques. Nous avons mis de côté l'idée de créer des visualisations pour l'aide à l'annotation et la mise en contexte des \textit{regions} dans le corpus. En ce qui concerne la médiation scientifique, les chercheurs pourront les utiliser dans le cadre de la présentation de leurs recherches. Cependant, il est plus compliqué de les proposer pour le grand public car elles restent très techniques. Nous nous heurtons également à des limites liées aux données : le score de similarité n'est pas forcément très fiable, les résultats du traitement automatique non annotées sont difficilement exploitables et l'annotation des chercheurs peut se révéler subjective. Ensuite, nous avons parlé de l'intégration à l'application des visualisations finales qui seront développées à partir de nos preuves de concept. Nous pourrons les intégrer soit à une nouvelle fenêtre, soit à un nouvel outil. Nous avons également évoqué des pistes que nous n'avons pas eu le temps d'explorer : le design et l'accessibilité. Pour finir, nous avons inscrit notre projet dans le champ des humanités numériques actuelles. Nous avons proposé une manière différente de représenter les similarités alors que les projets déjà existants favorisent encore la mosaïque et la barre de recherche. Cependant, nous avons constaté l'existence d'un projet similaire au nôtre qui souhaite visualiser les liens entre les tuiles des toits chinois anciens en fonction de leurs motifs au fil des époques. Ce dernier utilise également une visualisation sous la forme de réseaux mais il intègre en plus une frise chronologique pour mieux se repérer dans le temps. Nous pourrions ajouter cette amélioration à la visualisation \textit{force-directed layout} finale.
 	
-	La visualisation de données permet de révéler les trajectoires de circulation des idées à travers les cultures et le temps de différentes manières. La visualisation \textit{bipartite graph} nous a permis de comparer les figures géométrique présentes dans un manuel mathématique et dans une encyclopédie afin de comprendre la diffusion de concepts dans le temps et l'espace. Utilisé avec d'autres \textit{witnesses}, il pourrait également servir à réaliser la collation des images dans deux témoins différents afin d'identifier les variantes. Cela permettrait d'observer la réorganisation des images, les variations de style ainsi que les omission ou les ajouts d'images entre deux témoins d'une même œuvre. La visualisation \textit{force-directed layout} nous permet de comparer les traditions d'une même œuvre. Elle résout les problèmes liés à l'abondance de témoins éparpillés dans le monde entier ainsi que la barrière de la langue dans laquelle sont rédigés les textes. Il est alors possible de chercher à retrouver l'archétype d'une tradition en construisant un \textit{stemma codicum} comme le fait Dominique Raynaud dans son article\footcite{raynaudBuildingStemmaCodicum2014}.
+	La visualisation de données permet de révéler les trajectoires de la circulation des idées à travers les cultures et le temps de différentes manières. La visualisation \textit{bipartite graph} nous a permis de comparer les figures géométriques présentes dans un manuel mathématique et dans une encyclopédie afin de comprendre la diffusion de concepts dans le temps et l'espace. Utilisé avec d'autres \textit{witnesses}, il pourrait également servir à réaliser la collation des images dans deux témoins différents afin d'identifier les variantes. Cela permettrait d'observer la réorganisation des images, les variations de style ainsi que les omissions ou les ajouts d'images entre deux témoins d'une même œuvre. La visualisation \textit{force-directed layout} nous permet de comparer les traditions d'une même œuvre. Elle résout les problèmes liés à l'abondance de témoins éparpillés dans le monde entier ainsi que la barrière de la langue dans laquelle sont rédigés les textes. Il est alors possible de chercher à retrouver l'archétype d'une tradition en construisant un \textit{stemma codicum} comme le fait Dominique Raynaud dans son article\footcite{raynaudBuildingStemmaCodicum2014}.
 	
-	Dans le futur, les ingénieurs en charge du développement de l'application AIKON pourront reprendre les preuves de concept que nous avons développé pour s'en inspirer afin de réaliser les visualisations finales. Ils auront accès aux livrables techniques, c'est-à-dire le cahier des charges, le benchmark et la documentation des visualisations, mais également au code du \textit{bipartite graph}.
+	Dans le futur, les ingénieurs en charge du développement de l'application AIKON pourront reprendre les preuves de concept que nous avons développé pour s'en inspirer afin de réaliser les visualisations finales. Ils auront accès aux livrables techniques, c'est-à-dire le cahier des charges, le \textit{benchmark} et la documentation des visualisations, mais également au code du \textit{bipartite graph}.
 	
 	
 
